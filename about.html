@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Humanity Evolve | Million Hearts March</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Open+Sans:wght@400;600;700;800&display=swap');
+        
+        :root {
+            --primary-600: #7c3aed;
+            --primary-700: #6d28d9;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+        
+        .fun-title {
+            font-family: 'Fredoka One', cursive;
+        }
+        
+        .big-title {
+            font-family: 'Fredoka One', cursive;
+            font-size: 4rem;
+            line-height: 1.1;
+        }
+        
+        @media (max-width: 768px) {
+            .big-title {
+                font-size: 2.5rem;
+            }
+        }
+        
+        .rainbow-card {
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7, #dda0dd);
+            background-size: 400% 400%;
+            animation: rainbow 8s ease infinite;
+        }
+        
+        @keyframes rainbow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        .wiggle {
+            animation: wiggle 2s ease-in-out infinite;
+        }
+        
+        @keyframes wiggle {
+            0%, 7% { transform: rotateZ(0); }
+            15% { transform: rotateZ(-15deg); }
+            20% { transform: rotateZ(10deg); }
+            25% { transform: rotateZ(-10deg); }
+            30% { transform: rotateZ(6deg); }
+            35% { transform: rotateZ(-4deg); }
+            40%, 100% { transform: rotateZ(0); }
+        }
+        
+        .bouncy-text {
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        
+        .btn-fun {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1);
+            background-size: 300% 300%;
+            animation: gradient-shift 3s ease infinite;
+            border: none;
+            color: white;
+            font-weight: 800;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-fun:hover {
+            transform: scale(1.05);
+        }
+        
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Enhanced Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="text-4xl mr-3 wiggle">🏳️‍🌈</div>
+                    <div>
+                        <h1 class="text-2xl font-black fun-title">Humanity Evolve</h1>
+                        <p class="text-sm font-bold text-gray-600">Million Hearts March</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link font-bold text-lg hover:text-primary-600 transition-colors">
+                        🏠 Home
+                    </a>
+                    <a href="about.html" class="nav-link font-bold text-lg text-primary-600">
+                        📖 About
+                    </a>
+                    <a href="shop.html" class="nav-link font-bold text-lg hover:text-primary-600 transition-colors">
+                        🛍️ Shop
+                    </a>
+                    <a href="fundraiser.html" class="nav-link font-bold text-lg hover:text-primary-600 transition-colors">
+                        💝 Fundraiser
+                    </a>
+                    <a href="events.html" class="nav-link font-bold text-lg hover:text-primary-600 transition-colors">
+                        🎉 Events
+                    </a>
+                    <a href="contact.html" class="nav-link font-bold text-lg hover:text-primary-600 transition-colors">
+                        📞 Contact
+                    </a>
+                    <a href="partner.html" class="nav-link font-bold text-lg hover:text-primary-600 transition-colors">
+                        🤝 Partner With Us
+                    </a>
+                        <a href="bricks.html" class="nav-link font-bold text-lg hover:text-primary-600 transition-colors">
+    🧱 Digital Wall
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-3xl" onclick="toggleMobileMenu()">
+                    <span id="menu-icon">☰</span>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation Menu -->
+            <div id="mobile-menu" class="md:hidden hidden bg-white border-t-2 border-gray-200">
+                <div class="py-4 space-y-4">
+                    <a href="index.html" class="block nav-link font-bold text-lg hover:text-primary-600 transition-colors px-4 py-2">
+                        🏠 Home
+                    </a>
+                    <a href="about.html" class="block nav-link font-bold text-lg text-primary-600 px-4 py-2">
+                        📖 About
+                    </a>
+                    <a href="shop.html" class="block nav-link font-bold text-lg hover:text-primary-600 transition-colors px-4 py-2">
+                        🛍️ Shop
+                    </a>
+                    <a href="fundraiser.html" class="block nav-link font-bold text-lg hover:text-primary-600 transition-colors px-4 py-2">
+                        💝 Fundraiser
+                    </a>
+                    <a href="events.html" class="block nav-link font-bold text-lg hover:text-primary-600 transition-colors px-4 py-2">
+                        🎉 Events
+                    </a>
+                    <a href="contact.html" class="block nav-link font-bold text-lg hover:text-primary-600 transition-colors px-4 py-2">
+                        📞 Contact
+                    </a>
+                    <a href="partner.html" class="block nav-link font-bold text-lg hover:text-primary-600 transition-colors px-4 py-2">
+                        🤝 Partner With Us
+                    </a>
+                        <a href="bricks.html" class="nav-link font-bold text-lg hover:text-primary-600 transition-colors">
+    🧱 Digital Wall
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="rainbow-card py-20">
+        <div class="container mx-auto px-4 text-center text-white">
+            <h1 class="big-title mb-8 bouncy-text">
+                📖 About Humanity Evolve
+            </h1>
+            <p class="text-3xl font-bold mb-8 wiggle">
+                Creating Safe Spaces Where Love Wins
+            </p>
+            <p class="text-xl mb-12 max-w-4xl mx-auto font-semibold">
+                We're building America's safest LGBTQ+ community because everyone deserves to live authentically without fear.
+            </p>
+        </div>
+    </section>
+
+    <!-- Our Mission -->
+    <section class="bg-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="big-title text-center text-gray-900 mb-16 bouncy-text">
+                    🎯 Our Mission
+                </h2>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="card p-8 rounded-2xl">
+                            <h3 class="text-3xl font-black mb-6 wiggle">💝 Why We Exist</h3>
+                            <p class="text-lg font-semibold mb-6">
+                                LGBTQ+ individuals face disproportionate rates of violence, discrimination, and rejection. 
+                                We're creating a sanctuary where love is celebrated, differences are honored, and safety is guaranteed.
+                            </p>
+                            <ul class="space-y-3 text-lg font-semibold">
+                                <li>✓ 41% of transgender adults attempt suicide</li>
+                                <li>✓ 1 in 4 LGBTQ+ youth experience homelessness</li>
+                                <li>✓ 20% of hate crimes target LGBTQ+ individuals</li>
+                                <li>✓ Many face family rejection and workplace discrimination</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="card p-8 rounded-2xl">
+                            <h3 class="text-3xl font-black mb-6 wiggle">🏳️‍🌈 Our Solution</h3>
+                            <p class="text-lg font-semibold mb-6">
+                                A 160-acre secure community in Casa Grande, Arizona, where LGBTQ+ individuals and allies 
+                                can live, work, and thrive in complete safety and acceptance.
+                            </p>
+                            <ul class="space-y-3 text-lg font-semibold">
+                                <li>✓ 10-foot security walls around entire perimeter</li>
+                                <li>✓ 900+ container homes for residents</li>
+                                <li>✓ Community center with events and services</li>
+                                <li>✓ Memorial gardens honoring those we've lost</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Pulse Connection -->
+    <section class="bg-gray-100 py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="big-title text-gray-900 mb-8 bouncy-text">
+                    💔 Remembering Pulse
+                </h2>
+                <div class="card p-12 rounded-2xl mb-8">
+                    <div class="text-8xl mb-6 wiggle">🕯️</div>
+                    <h3 class="text-3xl font-black mb-6">June 12, 2016</h3>
+                    <p class="text-xl font-semibold mb-8">
+                        49 beautiful souls were taken from us at Pulse Nightclub in Orlando. 
+                        Their memory fuels our mission to create spaces where LGBTQ+ people can gather safely.
+                    </p>
+                    <p class="text-lg font-semibold">
+                        Our community will feature memorial gardens dedicated to the Pulse 49 and all LGBTQ+ lives lost to violence. 
+                        We're planning our first major event for June 12, 2026 - the 10th anniversary - to honor their memory.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Features -->
+    <section class="bg-white py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="big-title text-center text-gray-900 mb-16 bouncy-text">
+                🏘️ Community Features
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card p-8 rounded-2xl text-center">
+                    <div class="text-6xl mb-4 wiggle">🏠</div>
+                    <h3 class="text-2xl font-black mb-4">Container Homes</h3>
+                    <p class="text-lg font-semibold">900+ modern, sustainable container homes for residents and visitors. Affordable housing in a safe environment.</p>
+                </div>
+
+                <div class="card p-8 rounded-2xl text-center">
+                    <div class="text-6xl mb-4 wiggle">🏢</div>
+                    <h3 class="text-2xl font-black mb-4">Community Center</h3>
+                    <p class="text-lg font-semibold">Events, meetings, support groups, and celebrations. The heart of our community where connections are made.</p>
+                </div>
+
+                <div class="card p-8 rounded-2xl text-center">
+                    <div class="text-6xl mb-4 wiggle">🌺</div>
+                    <h3 class="text-2xl font-black mb-4">Memorial Gardens</h3>
+                    <p class="text-lg font-semibold">Beautiful spaces honoring LGBTQ+ lives lost, including dedicated areas for the Pulse 49 and other victims of hate.</p>
+                </div>
+
+                <div class="card p-8 rounded-2xl text-center">
+                    <div class="text-6xl mb-4 wiggle">🛡️</div>
+                    <h3 class="text-2xl font-black mb-4">Security Systems</h3>
+                    <p class="text-lg font-semibold">10-foot walls, controlled access, 24/7 monitoring, and emergency response. Complete peace of mind.</p>
+                </div>
+
+                <div class="card p-8 rounded-2xl text-center">
+                    <div class="text-6xl mb-4 wiggle">🎉</div>
+                    <h3 class="text-2xl font-black mb-4">Event Spaces</h3>
+                    <p class="text-lg font-semibold">Pride celebrations, parties, weddings, and gatherings. Spaces designed for joy and celebration.</p>
+                </div>
+
+                <div class="card p-8 rounded-2xl text-center">
+                    <div class="text-6xl mb-4 wiggle">🌱</div>
+                    <h3 class="text-2xl font-black mb-4">Sustainable Living</h3>
+                    <p class="text-lg font-semibold">Solar power, water conservation, community gardens, and eco-friendly practices throughout.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values -->
+    <section class="bg-gray-100 py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="big-title text-center text-gray-900 mb-16 bouncy-text">
+                💖 Our Values
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="card p-8 rounded-2xl">
+                    <h3 class="text-2xl font-black mb-4 wiggle">🏳️‍🌈 Inclusion</h3>
+                    <p class="text-lg font-semibold">All LGBTQ+ individuals and supportive allies are welcome. We celebrate every identity, orientation, and expression.</p>
+                </div>
+
+                <div class="card p-8 rounded-2xl">
+                    <h3 class="text-2xl font-black mb-4 wiggle">🛡️ Safety</h3>
+                    <p class="text-lg font-semibold">Physical and emotional safety is our top priority. Everyone deserves to live without fear of violence or discrimination.</p>
+                </div>
+
+                <div class="card p-8 rounded-2xl">
+                    <h3 class="text-2xl font-black mb-4 wiggle">🤝 Community</h3>
+                    <p class="text-lg font-semibold">We build connections, support networks, and chosen families. Together we are stronger than apart.</p>
+                </div>
+
+                <div class="card p-8 rounded-2xl">
+                    <h3 class="text-2xl font-black mb-4 wiggle">💝 Love</h3>
+                    <p class="text-lg font-semibold">Love wins. Love heals. Love transforms. We lead with love in everything we do.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="rainbow-card py-16">
+        <div class="container mx-auto px-4 text-center text-white">
+            <h2 class="big-title mb-8 bouncy-text">
+                🌟 Join Our Mission
+            </h2>
+            <p class="text-2xl font-bold mb-8 wiggle">
+                Help us build America's safest LGBTQ+ community
+            </p>
+            <p class="text-xl mb-12 max-w-3xl mx-auto font-semibold">
+                Every donation, every brick purchase, every share brings us closer to creating a world where 
+                LGBTQ+ individuals can live authentically and safely.
+            </p>
+            
+            <div class="space-y-6">
+                <button class="btn-fun text-2xl py-6 px-12 wiggle">
+                    💝 Donate Now
+                </button>
+                <br>
+                <button class="btn-fun text-xl py-4 px-8">
+                    🧱 Buy a Brick
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- About -->
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="text-3xl mr-3 wiggle">🏳️‍🌈</div>
+                        <h3 class="text-xl font-black fun-title">Humanity Evolve</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4 font-semibold">
+                        Building America's safest LGBTQ+ community on 160 acres in Casa Grande, Arizona.
+                    </p>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-black mb-4 bouncy-text">Contact</h4>
+                    <ul class="space-y-2 text-gray-300 font-semibold">
+                        <li>📧 humanityevolve23@gmail.com</li>
+                        <li>📱 (480) 398-6718</li>
+                        <li>🌐 millionheartsmarch.com</li>
+                        <li>📍 Casa Grande, Arizona</li>
+                    </ul>
+                </div>
+
+                <!-- Goal -->
+                <div class="text-center md:text-right">
+                    <p class="font-black text-yellow-400 text-2xl wiggle">🎯 $5,000,000 Goal</p>
+                    <p class="font-semibold text-lg text-gray-300">by December 31, 2025</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-8 p-6 rainbow-card rounded-2xl">
+                <h3 class="text-2xl font-black mb-2 bouncy-text">🏳️‍🌈 Together We Rise 🏳️‍🌈</h3>
+                <p class="text-lg font-bold">Building a world where love wins and everyone is safe to be themselves.</p>
+            </div>
+
+            <div class="text-center mt-6 text-gray-400">
+                <p>© 2024 Humanity Evolve. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+            
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.remove('hidden');
+                menuIcon.textContent = '✕';
+            } else {
+                mobileMenu.classList.add('hidden');
+                menuIcon.textContent = '☰';
+            }
+        }
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+                document.getElementById('menu-icon').textContent = '☰';
+            });
+        });
+
+        // Fun interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click effects to cards
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                card.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

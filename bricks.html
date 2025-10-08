@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memorial Bricks - Million Hearts March | Humanity Evolve</title>
+    <meta name="description" content="Honor loved ones with memorial bricks at America's safest LGBTQ+ sanctuary. Digital and physical options available on 160 acres in Arizona.">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏳️‍🌈</text></svg>">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Open+Sans:wght@400;600;700;800&display=swap');
+        
+        .fun-font { font-family: 'Fredoka One', cursive; }
+        .main-font { font-family: 'Open Sans', sans-serif; }
+        
+        body { 
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .rainbow-card {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57, #ff9ff3, #54a0ff);
+            background-size: 400% 400%;
+            animation: rainbow 8s ease infinite;
+        }
+        
+        @keyframes rainbow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .wiggle {
+            animation: wiggle 2s ease-in-out infinite;
+        }
+        
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(1deg); }
+            75% { transform: rotate(-1deg); }
+        }
+        
+        .bouncy-text {
+            animation: bounce 2s ease-in-out infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .big-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            text-shadow: 3px 3px 0px rgba(0,0,0,0.1);
+        }
+        
+        .fun-title {
+            font-family: 'Fredoka One', cursive;
+            text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+        }
+        
+        .btn-fun {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            border: none;
+            color: white;
+            font-weight: bold;
+            border-radius: 50px;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+        
+        .btn-fun:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            color: white;
+            text-decoration: none;
+        }
+        
+        .brick-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border: 3px solid transparent;
+            background-clip: padding-box;
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+        }
+        
+        .brick-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+        
+        .brick-btn {
+            background: linear-gradient(45deg, #8B4513, #A0522D);
+            color: white;
+            border: none;
+            border-radius: 15px;
+            padding: 1rem 1.5rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-bottom: 1rem;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+        }
+        
+        .brick-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(139, 69, 19, 0.3);
+            color: white;
+            text-decoration: none;
+        }
+        
+        .digital-btn {
+            background: linear-gradient(45deg, #3B82F6, #1D4ED8);
+        }
+        
+        .digital-btn:hover {
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+        }
+        
+        .premium-btn {
+            background: linear-gradient(45deg, #7C3AED, #5B21B6);
+        }
+        
+        .premium-btn:hover {
+            box-shadow: 0 8px 20px rgba(124, 58, 237, 0.3);
+        }
+        
+        .brick-wall {
+            background: linear-gradient(45deg, #8B4513, #A0522D);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: inset 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .digital-brick {
+            background: linear-gradient(45deg, #DC2626, #B91C1C);
+            color: white;
+            border-radius: 10px;
+            padding: 1rem;
+            margin: 0.5rem;
+            display: inline-block;
+            min-width: 200px;
+            text-align: center;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .digital-brick:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        }
+        
+        .brick-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+        }
+        
+        .modal-content {
+            background-color: white;
+            margin: 10% auto;
+            padding: 2rem;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+        }
+        
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .close:hover {
+            color: black;
+        }
+        
+        .reward-list {
+            background: #f3f4f6;
+            border-radius: 10px;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-left: 4px solid #8B4513;
+        }
+        
+        .reward-item {
+            display: flex;
+            align-items: center;
+            margin: 0.5rem 0;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #374151;
+        }
+        
+        .reward-item::before {
+            content: "✅";
+            margin-right: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .big-title { font-size: 2.5rem; }
+            .brick-card { padding: 1.5rem; }
+            .digital-brick { min-width: 150px; margin: 0.25rem; }
+        }
+    </style>
+</head>
+<body class="main-font">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="text-3xl mr-3 wiggle">🏳️‍🌈</div>
+                    <div>
+                        <div class="text-xl font-black fun-title text-gray-800">Million Hearts March</div>
+                        <div class="text-sm font-bold text-gray-600">Humanity Evolve</div>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="font-bold text-gray-700 hover:text-purple-600 transition-colors">🏠 Home</a>
+                    <a href="fundraiser.html" class="font-bold text-gray-700 hover:text-purple-600 transition-colors">💝 Donate</a>
+                    <a href="events.html" class="font-bold text-gray-700 hover:text-purple-600 transition-colors">🎪 Events</a>
+                    <a href="bricks.html" class="font-bold text-purple-600 border-b-2 border-purple-600">🧱 Memorial Bricks</a>
+                    <a href="shop.html" class="font-bold text-gray-700 hover:text-purple-600 transition-colors">🛍️ Shop</a>
+                    <a href="contact.html" class="font-bold text-gray-700 hover:text-purple-600 transition-colors">📞 Contact</a>
+                    <a href="partner.html" class="font-bold text-gray-700 hover:text-purple-600 transition-colors">🤝 Partner</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button onclick="toggleMobileMenu()" class="text-2xl" id="menu-icon">☰</button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+                <div class="py-4 space-y-4">
+                    <a href="index.html" class="block font-bold text-gray-700 hover:text-purple-600 transition-colors">🏠 Home</a>
+                    <a href="fundraiser.html" class="block font-bold text-gray-700 hover:text-purple-600 transition-colors">💝 Donate</a>
+                    <a href="events.html" class="block font-bold text-gray-700 hover:text-purple-600 transition-colors">🎪 Events</a>
+                    <a href="bricks.html" class="block font-bold text-purple-600 border-l-4 border-purple-600 pl-4">🧱 Memorial Bricks</a>
+                    <a href="shop.html" class="block font-bold text-gray-700 hover:text-purple-600 transition-colors">🛍️ Shop</a>
+                    <a href="contact.html" class="block font-bold text-gray-700 hover:text-purple-600 transition-colors">📞 Contact</a>
+                    <a href="partner.html" class="block font-bold text-gray-700 hover:text-purple-600 transition-colors">🤝 Partner</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="rainbow-card py-16">
+        <div class="container mx-auto px-4 text-center text-white">
+            <h1 class="big-title mb-8 bouncy-text">
+                🧱 Memorial Bricks
+            </h1>
+            <p class="text-2xl font-bold mb-8 wiggle">
+                Honor Your Loved Ones Forever
+            </p>
+            <div class="text-lg font-semibold">
+                Create lasting memorials at America's safest LGBTQ+ sanctuary
+            </div>
+        </div>
+    </section>
+
+    <!-- Brick Purchase Options -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-black fun-title text-gray-900 mb-4 bouncy-text">
+                    💖 Choose Your Memorial
+                </h2>
+                <p class="text-xl font-bold text-gray-700">
+                    Three beautiful ways to honor someone special
+                </p>
+            </div>
+
+            <div class="max-w-5xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Digital Brick -->
+                    <div class="brick-card text-center border-4 border-blue-400">
+                        <div class="text-4xl mb-4 wiggle">💻</div>
+                        <h3 class="text-xl font-black fun-title mb-3">Digital Memorial</h3>
+                        <div class="text-2xl font-black text-blue-600 mb-3">$1</div>
+                        <div class="bg-blue-500 text-white font-black text-xs px-2 py-1 rounded-full mb-3">DIGITAL</div>
+                        <p class="text-gray-700 font-semibold mb-4">
+                            Beautiful digital memorial displayed on our interactive wall. Perfect for honoring loved ones online.
+                        </p>
+                        <div class="reward-list">
+                            <div class="reward-item">Digital memorial brick on website</div>
+                            <div class="reward-item">Custom message (up to 100 characters)</div>
+                            <div class="reward-item">Permanent online display</div>
+                            <div class="reward-item">Shareable memorial link</div>
+                            <div class="reward-item">Digital certificate</div>
+                        </div>
+                        <a href="https://buy.stripe.com/7sYbJ33Cg1RGei5fkJ6AM08" class="brick-btn digital-btn wiggle">
+                            💻 Order Digital Brick
+                        </a>
+                    </div>
+
+                    <!-- Physical Brick -->
+                    <div class="brick-card text-center border-4 border-yellow-400">
+                        <div class="text-4xl mb-4 wiggle">🧱</div>
+                        <h3 class="text-xl font-black fun-title mb-3">Physical Memorial</h3>
+                        <div class="text-2xl font-black text-orange-600 mb-3">$10</div>
+                        <div class="bg-yellow-500 text-white font-black text-xs px-2 py-1 rounded-full mb-3">POPULAR!</div>
+                        <p class="text-gray-700 font-semibold mb-4">
+                            Real brick installed at our Arizona sanctuary plus all digital benefits. A lasting physical memorial.
+                        </p>
+                        <div class="reward-list">
+                            <div class="reward-item">All digital memorial benefits</div>
+                            <div class="reward-item">Physical brick at sanctuary</div>
+                            <div class="reward-item">Professional engraving</div>
+                            <div class="reward-item">GPS coordinates of your brick</div>
+                            <div class="reward-item">Installation photo sent to you</div>
+                            <div class="reward-item">Printed certificate mailed</div>
+                        </div>
+                        <a href="https://buy.stripe.com/00waEZ5Ko67W0rf6Od6AM09" class="brick-btn wiggle">
+                            🧱 Order Physical Brick
+                        </a>
+                    </div>
+
+                    <!-- Premium Brick -->
+                    <div class="brick-card text-center border-4 border-purple-500 bg-gradient-to-br from-purple-50 to-purple-100">
+                        <div class="text-4xl mb-4 wiggle">👑</div>
+                        <h3 class="text-xl font-black fun-title mb-3">Premium Memorial</h3>
+                        <div class="text-2xl font-black text-purple-600 mb-3">$25</div>
+                        <div class="bg-purple-500 text-white font-black text-xs px-2 py-1 rounded-full mb-3">PREMIUM!</div>
+                        <p class="text-gray-700 font-semibold mb-4">
+                            Premium brick with prime sanctuary location and enhanced features. The ultimate memorial tribute.
+                        </p>
+                        <div class="reward-list">
+                            <div class="reward-item">All physical memorial benefits</div>
+                            <div class="reward-item">Prime sanctuary location</div>
+                            <div class="reward-item">Enhanced engraving options</div>
+                            <div class="reward-item">Featured on digital wall</div>
+                            <div class="reward-item">Priority placement</div>
+                            <div class="reward-item">Premium certificate with frame</div>
+                            <div class="reward-item">Annual memorial photo update</div>
+                        </div>
+                        <a href="https://buy.stripe.com/8x29AVa0Eaoc4Hv5K96AM0a" class="brick-btn premium-btn wiggle">
+                            👑 Order Premium Brick
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Digital Wall -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-black fun-title text-gray-900 mb-4 bouncy-text">
+                    🌟 Interactive Memorial Wall
+                </h2>
+                <p class="text-xl font-bold text-gray-700">
+                    Click on any brick to read the memorial message
+                </p>
+            </div>
+
+            <div class="max-w-6xl mx-auto">
+                <div class="brick-wall">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-black fun-title text-white mb-4">
+                            💖 Memorial Bricks Wall
+                        </h3>
+                        <p class="text-white font-bold">
+                            Each brick represents love, memory, and hope
+                        </p>
+                    </div>
+
+                    <!-- Sample Memorial Bricks -->
+                    <div class="flex flex-wrap justify-center">
+                        <div class="digital-brick" onclick="showBrickModal('In loving memory of Sarah Johnson', 'A beacon of light who showed us all how to love authentically. Forever in our hearts. 🌈', 'Mom & Dad')">
+                            <div class="font-black">In Memory of</div>
+                            <div class="text-lg">Sarah Johnson</div>
+                            <div class="text-sm">💖 Forever Loved</div>
+                        </div>
+
+                        <div class="digital-brick" onclick="showBrickModal('Celebrating Alex Rivera', 'Your courage to be yourself inspired everyone around you. Thank you for being our hero. 🏳️‍⚧️', 'The Rivera Family')">
+                            <div class="font-black">Celebrating</div>
+                            <div class="text-lg">Alex Rivera</div>
+                            <div class="text-sm">🌟 Our Hero</div>
+                        </div>
+
+                        <div class="digital-brick" onclick="showBrickModal('For Jamie Chen', 'Your laughter filled every room. Your spirit lives on in all of us who were lucky to know you. ❤️', 'Best Friends Forever')">
+                            <div class="font-black">For</div>
+                            <div class="text-lg">Jamie Chen</div>
+                            <div class="text-sm">😊 Pure Joy</div>
+                        </div>
+
+                        <div class="digital-brick" onclick="showBrickModal('Honoring Morgan Taylor', 'A fierce advocate who never stopped fighting for equality. Your legacy continues. ✊', 'LGBTQ+ Community Center')">
+                            <div class="font-black">Honoring</div>
+                            <div class="text-lg">Morgan Taylor</div>
+                            <div class="text-sm">✊ Fighter</div>
+                        </div>
+
+                        <div class="digital-brick" onclick="showBrickModal('Remembering Casey Williams', 'You taught us that love is love is love. Thank you for showing us the way. 🏳️‍🌈', 'Your Chosen Family')">
+                            <div class="font-black">Remembering</div>
+                            <div class="text-lg">Casey Williams</div>
+                            <div class="text-sm">💕 Love Wins</div>
+                        </div>
+
+                        <div class="digital-brick" onclick="showBrickModal('In Honor of Jordan Martinez', 'Your kindness knew no bounds. You made the world a better place just by being in it. 🌻', 'Loving Partner Sam')">
+                            <div class="font-black">In Honor of</div>
+                            <div class="text-lg">Jordan Martinez</div>
+                            <div class="text-sm">🌻 Kind Soul</div>
+                        </div>
+
+                        <!-- Placeholder for future bricks -->
+                        <div class="digital-brick" style="background: linear-gradient(45deg, #6B7280, #4B5563); opacity: 0.7;" onclick="showBrickModal('Your Memorial Here', 'This could be your memorial brick! Click the buttons above to create a lasting tribute to someone special.', 'Your Name Here')">
+                            <div class="font-black">Your Memorial</div>
+                            <div class="text-lg">Could Be Here</div>
+                            <div class="text-sm">💖 Add Yours</div>
+                        </div>
+
+                        <div class="digital-brick" style="background: linear-gradient(45deg, #6B7280, #4B5563); opacity: 0.7;" onclick="showBrickModal('Honor Someone Special', 'Create a beautiful memorial for someone who meant the world to you. Their memory will live on forever.', 'Create Your Memorial')">
+                            <div class="font-black">Honor Someone</div>
+                            <div class="text-lg">Special</div>
+                            <div class="text-sm">🌟 Click Here</div>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-8">
+                        <p class="text-white font-bold text-lg mb-4">
+                            💫 Be part of our memorial wall
+                        </p>
+                        <div class="space-x-4">
+                            <a href="https://buy.stripe.com/7sYbJ33Cg1RGei5fkJ6AM08" class="btn-fun wiggle">
+                                💻 Digital Brick $1
+                            </a>
+                            <a href="https://buy.stripe.com/00waEZ5Ko67W0rf6Od6AM09" class="btn-fun wiggle">
+                                🧱 Physical Brick $10
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Memorial Modal -->
+    <div id="brickModal" class="brick-modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeBrickModal()">×</span>
+            <div class="text-center">
+                <div class="text-4xl mb-4">💖</div>
+                <h3 id="modalTitle" class="text-2xl font-black fun-title mb-4"></h3>
+                <p id="modalMessage" class="text-gray-700 font-semibold mb-4 text-lg"></p>
+                <p id="modalFrom" class="text-gray-500 font-bold italic"></p>
+                <div class="mt-6">
+                    <a href="https://buy.stripe.com/7sYbJ33Cg1RGei5fkJ6AM08" class="btn-fun mr-2">
+                        Create Your Memorial
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call to Action -->
+    <section class="rainbow-card py-16">
+        <div class="container mx-auto px-4 text-center text-white">
+            <h2 class="big-title mb-8 bouncy-text">
+                💖 Create a Lasting Memorial
+            </h2>
+            <p class="text-2xl font-bold mb-8 wiggle">
+                Honor someone special with a memorial that will last forever
+            </p>
+            <div class="space-x-4">
+                <a href="https://buy.stripe.com/00waEZ5Ko67W0rf6Od6AM09" class="btn-fun text-xl py-4 px-8 wiggle">
+                    🧱 Physical Brick $10
+                </a>
+                <a href="fundraiser.html" class="btn-fun text-xl py-4 px-8 wiggle">
+                    💝 Make a Donation
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Organization Info -->
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="text-2xl mr-2 wiggle">🏳️‍🌈</div>
+                        <div>
+                            <div class="text-lg font-black fun-title">Million Hearts March</div>
+                            <div class="text-sm font-bold text-gray-300">Humanity Evolve</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 font-semibold">
+                        Building America's safest LGBTQ+ sanctuary on 160 acres in Arizona.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-black fun-title mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-white font-semibold transition-colors">🏠 Home</a></li>
+                        <li><a href="fundraiser.html" class="text-gray-300 hover:text-white font-semibold transition-colors">💝 Donate</a></li>
+                        <li><a href="events.html" class="text-gray-300 hover:text-white font-semibold transition-colors">🎪 Events</a></li>
+                        <li><a href="bricks.html" class="text-gray-300 hover:text-white font-semibold transition-colors">🧱 Memorial Bricks</a></li>
+                        <li><a href="shop.html" class="text-gray-300 hover:text-white font-semibold transition-colors">🛍️ Shop</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-black fun-title mb-4">Contact Us</h3>
+                    <ul class="space-y-2">
+                        <li class="text-gray-300 font-semibold">📧 humanityevolve23@gmail.com</li>
+                        <li class="text-gray-300 font-semibold">📱 (480) 398-6718</li>
+                        <li class="text-gray-300 font-semibold">📍 Arizona, USA</li>
+                    </ul>
+                </div>
+
+                <!-- Social & Legal -->
+                <div>
+                    <h3 class="text-lg font-black fun-title mb-4">Memorial Info</h3>
+                    <ul class="space-y-2">
+                        <li class="text-gray-300 font-semibold">💻 Digital Memorials: $1</li>
+                        <li class="text-gray-300 font-semibold">🧱 Physical Bricks: $10</li>
+                        <li class="text-gray-300 font-semibold">👑 Premium Bricks: $25</li>
+                        <li class="text-gray-300 font-semibold">💳 Secure Payments</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-300 font-semibold">
+                    © 2024 Million Hearts March - Humanity Evolve. Honoring memories, building hope. 🌈
+                </p>
+                <p class="text-gray-400 font-semibold mt-2">
+                    All memorial purchases support America's safest LGBTQ+ sanctuary.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.textContent = '✕';
+            } else {
+                menu.classList.add('hidden');
+                icon.textContent = '☰';
+            }
+        }
+
+        // Brick modal functions
+        function showBrickModal(title, message, from) {
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalMessage').textContent = message;
+            document.getElementById('modalFrom').textContent = '- ' + from;
+            document.getElementById('brickModal').style.display = 'block';
+        }
+
+        function closeBrickModal() {
+            document.getElementById('brickModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('brickModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
+
+

@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Million Hearts March | Humanity Evolve</title>
+    <meta name="description" content="Get in touch with the Million Hearts March team! Email, social media, and contact forms for donations, partnerships, media inquiries, and general questions.">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏳️‍🌈</text></svg>">
+    
+    <style>
+        /* Fun animations and styling */
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Open+Sans:wght@400;600;700;800&display=swap');
+        
+        .fun-font { font-family: 'Fredoka One', cursive; }
+        .main-font { font-family: 'Open Sans', sans-serif; }
+        
+        body { 
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .rainbow-card {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57, #ff9ff3, #54a0ff);
+            background-size: 400% 400%;
+            animation: rainbow 8s ease infinite;
+        }
+        
+        @keyframes rainbow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .wiggle {
+            animation: wiggle 2s ease-in-out infinite;
+        }
+        
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(1deg); }
+            75% { transform: rotate(-1deg); }
+        }
+        
+        .bouncy-text {
+            animation: bounce 2s ease-in-out infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .big-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            text-shadow: 3px 3px 0px rgba(0,0,0,0.1);
+        }
+        
+        .fun-title {
+            font-family: 'Fredoka One', cursive;
+            text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+        }
+        
+        .btn-fun {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            border: none;
+            color: white;
+            font-weight: bold;
+            border-radius: 50px;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+        
+        .btn-fun:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            color: white;
+            text-decoration: none;
+        }
+        
+        .contact-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border: 3px solid transparent;
+            background-clip: padding-box;
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+        
+        .contact-method {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            background: #f8f9ff;
+            border-radius: 15px;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-method:hover {
+            background: #e8f2ff;
+            transform: translateX(5px);
+        }
+        
+        .contact-icon {
+            font-size: 2rem;
+            margin-right: 1rem;
+            animation: wiggle 3s ease-in-out infinite;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e1e5e9;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #4ecdc4;
+            box-shadow: 0 0 0 3px rgba(78, 205, 196, 0.1);
+        }
+        
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .social-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .social-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        
+        .response-time {
+            background: linear-gradient(45deg, #4ecdc4, #44a08d);
+            color: white;
+            padding: 1rem;
+            border-radius: 15px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .countdown-timer {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        .countdown-timer div {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        /* Mobile menu styles */
+        .mobile-menu {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        
+        @media (max-width: 768px) {
+            .big-title { font-size: 2.5rem; }
+            .contact-card { padding: 1.5rem; }
+            .social-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body class="main-font">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="text-3xl mr-3 wiggle">🏳️‍🌈</div>
+                    <div>
+                        <div class="text-xl font-black fun-title text-gray-800">Million Hearts March</div>
+                        <div class="text-sm font-bold text-gray-600">Humanity Evolve</div>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="font-bold text-gray-700 hover:text-purple-600 transition-colors">🏠 Home</a>
+                    <a href="fundraiser.html" class="font-bold text-gray-700 hover:text-purple-600 transition-colors">💝 Donate</a>
+                    <a href="events.html" class="font-bold text-gray-700 hover:text-purple-600 transition-colors">🎪 Events</a>
+                    <a href="bricks.html" class="font-bold text-gray-700 hover:text-purple-600 transition-colors">🧱 Memorial Bricks</a>
+                    <a href="shop.html" class="font-bold text-gray-700 hover:text-purple-600 transition-colors">🛍️ Shop</a>
+                    <a href="contact.html" class="font-bold text-purple-600 border-b-2 border-purple-600">📞 Contact</a>
+                    <a href="partner.html" class="font-bold text-gray-700 hover:text-purple-600 transition-colors">🤝 Partner</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button onclick="toggleMobileMenu()" class="text-2xl" id="menu-icon">☰</button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+                <div class="py-4 space-y-4">
+                    <a href="index.html" class="block font-bold text-gray-700 hover:text-purple-600 transition-colors">🏠 Home</a>
+                    <a href="fundraiser.html" class="block font-bold text-gray-700 hover:text-purple-600 transition-colors">💝 Donate</a>
+                    <a href="events.html" class="block font-bold text-gray-700 hover:text-purple-600 transition-colors">🎪 Events</a>
+                    <a href="bricks.html" class="block font-bold text-gray-700 hover:text-purple-600 transition-colors">🧱 Memorial Bricks</a>
+                    <a href="shop.html" class="block font-bold text-gray-700 hover:text-purple-600 transition-colors">🛍️ Shop</a>
+                    <a href="contact.html" class="block font-bold text-purple-600 border-l-4 border-purple-600 pl-4">📞 Contact</a>
+                    <a href="partner.html" class="block font-bold text-gray-700 hover:text-purple-600 transition-colors">🤝 Partner</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="rainbow-card py-16">
+        <div class="container mx-auto px-4 text-center text-white">
+            <h1 class="big-title mb-8 bouncy-text">
+                📞 Get In Touch
+            </h1>
+            <p class="text-2xl font-bold mb-8 wiggle">
+                We'd love to hear from you! Let's build this sanctuary together.
+            </p>
+            <div class="response-time max-w-2xl mx-auto">
+                <div class="text-xl font-black mb-2">⚡ 24-Hour Response Promise</div>
+                <div class="text-lg font-semibold">We respond to all messages within 24 hours!</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Methods -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-black fun-title text-gray-900 mb-4 bouncy-text">
+                    💬 How to Reach Us
+                </h2>
+                <p class="text-xl font-bold text-gray-700">
+                    Choose the method that works best for you!
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Email -->
+                <div class="contact-card">
+                    <div class="contact-method">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <div class="font-black text-lg">Email Us</div>
+                            <div class="text-gray-600 font-semibold">Best for detailed questions</div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <a href="mailto:humanityevolve23@gmail.com" class="text-blue-600 font-bold text-lg hover:underline">
+                            humanityevolve23@gmail.com
+                        </a>
+                        <p class="text-sm text-gray-600 mt-2 font-semibold">
+                            ✅ Preferred method • 24hr response guaranteed
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Phone -->
+                <div class="contact-card">
+                    <div class="contact-method">
+                        <div class="contact-icon">📱</div>
+                        <div>
+                            <div class="font-black text-lg">Call or Text</div>
+                            <div class="text-gray-600 font-semibold">Messaging preferred</div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <a href="tel:+14803986718" class="text-blue-600 font-bold text-lg hover:underline">
+                            (480) 398-6718
+                        </a>
+                        <p class="text-sm text-gray-600 mt-2 font-semibold">
+                            📝 Text messages preferred • Voice calls limited due to work schedule
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Website -->
+                <div class="contact-card">
+                    <div class="contact-method">
+                        <div class="contact-icon">🌐</div>
+                        <div>
+                            <div class="font-black text-lg">Visit Our Website</div>
+                            <div class="text-gray-600 font-semibold">All the latest updates</div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <a href="https://millionheartsmarch.com" class="text-blue-600 font-bold text-lg hover:underline">
+                            millionheartsmarch.com
+                        </a>
+                        <p class="text-sm text-gray-600 mt-2 font-semibold">
+                            🎯 Fundraising progress • Events • News
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-black fun-title text-gray-900 mb-4 bouncy-text">
+                    📱 Follow Our Journey
+                </h2>
+                <p class="text-xl font-bold text-gray-700 mb-8">
+                    Stay connected on social media for daily updates!
+                </p>
+            </div>
+
+            <div class="social-grid">
+                <!-- Instagram -->
+                <div class="social-card">
+                    <div class="text-4xl mb-4 wiggle">📸</div>
+                    <h3 class="text-xl font-black mb-2 fun-title">Instagram</h3>
+                    <p class="text-gray-600 font-semibold mb-4">Daily progress photos & behind-the-scenes</p>
+                    <a href="https://instagram.com/millionheartsmarch" target="_blank" class="btn-fun">
+                        Follow @MillionHeartsMarch
+                    </a>
+                </div>
+
+                <!-- Facebook -->
+                <div class="social-card">
+                    <div class="text-4xl mb-4 wiggle">👥</div>
+                    <h3 class="text-xl font-black mb-2 fun-title">Facebook</h3>
+                    <p class="text-gray-600 font-semibold mb-4">Community discussions & event updates</p>
+                    <a href="https://facebook.com/millionheartsmarch" target="_blank" class="btn-fun">
+                        Like Our Page
+                    </a>
+                </div>
+
+                <!-- TikTok -->
+                <div class="social-card">
+                    <div class="text-4xl mb-4 wiggle">🎵</div>
+                    <h3 class="text-xl font-black mb-2 fun-title">TikTok</h3>
+                    <p class="text-gray-600 font-semibold mb-4">Fun videos & sanctuary updates</p>
+                    <a href="https://tiktok.com/@millionheartsmarch" target="_blank" class="btn-fun">
+                        Follow @MillionHeartsMarch
+                    </a>
+                </div>
+
+                <!-- Twitter/X -->
+                <div class="social-card">
+                    <div class="text-4xl mb-4 wiggle">🐦</div>
+                    <h3 class="text-xl font-black mb-2 fun-title">Twitter/X</h3>
+                    <p class="text-gray-600 font-semibold mb-4">Real-time news & announcements</p>
+                    <a href="https://twitter.com/millionheartsmarch" target="_blank" class="btn-fun">
+                        Follow @MillionHeartsMarch
+                    </a>
+                </div>
+
+                <!-- YouTube -->
+                <div class="social-card">
+                    <div class="text-4xl mb-4 wiggle">📺</div>
+                    <h3 class="text-xl font-black mb-2 fun-title">YouTube</h3>
+                    <p class="text-gray-600 font-semibold mb-4">Virtual events & documentary content</p>
+                    <a href="https://youtube.com/@millionheartsmarch" target="_blank" class="btn-fun">
+                        Subscribe to Our Channel
+                    </a>
+                </div>
+
+                <!-- Discord -->
+                <div class="social-card">
+                    <div class="text-4xl mb-4 wiggle">💬</div>
+                    <h3 class="text-xl font-black mb-2 fun-title">Discord</h3>
+                    <p class="text-gray-600 font-semibold mb-4">Live community chat & Tuesday circles</p>
+                    <a href="#" onclick="alert('Discord server launching soon! Join our email list for the invite.')" class="btn-fun">
+                        Join Our Server
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Forms -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-black fun-title text-gray-900 mb-4 bouncy-text">
+                    📝 Send Us a Message
+                </h2>
+                <p class="text-xl font-bold text-gray-700">
+                    Choose the form that best fits your needs!
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- General Contact Form -->
+                <div class="contact-card">
+                    <h3 class="text-2xl font-black fun-title mb-6 text-center">💬 General Questions</h3>
+                    <form onsubmit="submitGeneralContact(event)" class="space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="form-group">
+                                <label>First Name *</label>
+                                <input type="text" required placeholder="Your first name">
+                            </div>
+                            <div class="form-group">
+                                <label>Last Name *</label>
+                                <input type="text" required placeholder="Your last name">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Email Address *</label>
+                            <input type="email" required placeholder="your@email.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="tel" placeholder="(555) 123-4567">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Subject *</label>
+                            <select required>
+                                <option value="">Select a topic...</option>
+                                <option value="general">General Question</option>
+                                <option value="volunteer">Volunteering</option>
+                                <option value="events">Events & Activities</option>
+                                <option value="sanctuary">Sanctuary Information</option>
+                                <option value="support">Need Support/Help</option>
+                                <option value="feedback">Feedback/Suggestions</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Your Message *</label>
+                            <textarea rows="5" required placeholder="Tell us how we can help you or what you'd like to know..."></textarea>
+                        </div>
+                        
+                        <div class="text-center">
+                            <button type="submit" class="btn-fun text-lg py-3 px-8 wiggle">
+                                📧 Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Media/Press Inquiries -->
+                <div class="contact-card">
+                    <h3 class="text-2xl font-black fun-title mb-6 text-center">📰 Media & Press</h3>
+                    <form onsubmit="submitMediaContact(event)" class="space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="form-group">
+                                <label>Your Name *</label>
+                                <input type="text" required placeholder="Full name">
+                            </div>
+                            <div class="form-group">
+                                <label>Title/Position *</label>
+                                <input type="text" required placeholder="Reporter, Editor, etc.">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Media Outlet *</label>
+                            <input type="text" required placeholder="Newspaper, TV station, blog, etc.">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Email Address *</label>
+                            <input type="email" required placeholder="your@mediaoutlet.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Phone Number *</label>
+                            <input type="tel" required placeholder="(555) 123-4567">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Story Type *</label>
+                            <select required>
+                                <option value="">Select story type...</option>
+                                <option value="news">Breaking News</option>
+                                <option value="feature">Feature Story</option>
+                                <option value="interview">Interview Request</option>
+                                <option value="documentary">Documentary/Film</option>
+                                <option value="podcast">Podcast</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Deadline</label>
+                            <input type="date">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Story Details *</label>
+                            <textarea rows="4" required placeholder="Tell us about your story angle, questions you'd like to ask, and any specific information you need..."></textarea>
+                        </div>
+                        
+                        <div class="text-center">
+                            <button type="submit" class="btn-fun text-lg py-3 px-8 wiggle">
+                                📰 Submit Media Request
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Actions -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-black fun-title text-gray-900 mb-4 bouncy-text">
+                    ⚡ Quick Actions
+                </h2>
+                <p class="text-xl font-bold text-gray-700">
+                    Need something specific? Jump right to it!
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Donate -->
+                <div class="contact-card text-center">
+                    <div class="text-4xl mb-4 wiggle">💝</div>
+                    <h3 class="text-lg font-black fun-title mb-2">Make a Donation</h3>
+                    <p class="text-gray-600 font-semibold mb-4">Support our $5M goal</p>
+                    <a href="fundraiser.html" class="btn-fun">Donate Now</a>
+                </div>
+
+                <!-- Events -->
+                <div class="contact-card text-center">
+                    <div class="text-4xl mb-4 wiggle">🎪</div>
+                    <h3 class="text-lg font-black fun-title mb-2">Join Events</h3>
+                    <p class="text-gray-600 font-semibold mb-4">Tuesday circles & more</p>
+                    <a href="events.html" class="btn-fun">See Events</a>
+                </div>
+
+                <!-- Partnership -->
+                <div class="contact-card text-center">
+                    <div class="text-4xl mb-4 wiggle">🤝</div>
+                    <h3 class="text-lg font-black fun-title mb-2">Partner With Us</h3>
+                    <p class="text-gray-600 font-semibold mb-4">Business partnerships</p>
+                    <a href="partner.html" class="btn-fun">Learn More</a>
+                </div>
+
+                <!-- Shop -->
+                <div class="contact-card text-center">
+                    <div class="text-4xl mb-4 wiggle">🛍️</div>
+                    <h3 class="text-lg font-black fun-title mb-2">Shop Merch</h3>
+                    <p class="text-gray-600 font-semibold mb-4">Support through purchases</p>
+                    <a href="shop.html" class="btn-fun">Shop Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Contact -->
+    <section class="py-16 bg-red-50 border-t-4 border-red-500">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-black fun-title text-red-700 mb-4 bouncy-text">
+                    🚨 Need Immediate Help?
+                </h2>
+                <p class="text-lg font-bold text-red-600 mb-6">
+                    If you're in crisis or need immediate support, please reach out to these resources:
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <!-- Crisis Hotline -->
+                <div class="bg-white border-2 border-red-200 rounded-lg p-6 text-center">
+                    <div class="text-3xl mb-3">📞</div>
+                    <h3 class="font-black text-lg mb-2">Crisis Hotline</h3>
+                    <p class="font-bold text-red-600 text-xl">988</p>
+                    <p class="text-sm font-semibold text-gray-600">24/7 Suicide & Crisis Lifeline</p>
+                </div>
+
+                <!-- LGBTQ+ Support -->
+                <div class="bg-white border-2 border-red-200 rounded-lg p-6 text-center">
+                    <div class="text-3xl mb-3">🏳️‍🌈</div>
+                    <h3 class="font-black text-lg mb-2">LGBTQ+ Crisis</h3>
+                    <p class="font-bold text-red-600 text-lg">1-866-488-7386</p>
+                    <p class="text-sm font-semibold text-gray-600">Trevor Project Lifeline</p>
+                </div>
+
+                <!-- Emergency -->
+                <div class="bg-white border-2 border-red-200 rounded-lg p-6 text-center">
+                    <div class="text-3xl mb-3">🚑</div>
+                    <h3 class="font-black text-lg mb-2">Emergency</h3>
+                    <p class="font-bold text-red-600 text-xl">911</p>
+                    <p class="text-sm font-semibold text-gray-600">Police, Fire, Medical</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-8">
+                <p class="text-lg font-bold text-red-700">
+                    💕 You are loved, you matter, and you are not alone. We're here for you.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="rainbow-card py-16">
+        <div class="container mx-auto px-4 text-center text-white">
+            <h2 class="big-title mb-8 bouncy-text">
+                🌈 Let's Build This Together
+            </h2>
+                    <p class="text-2xl font-bold mb-8 wiggle">
+                Every message, every connection, every heart that joins us brings us closer to our sanctuary!
+            </p>
+            <div class="max-w-2xl mx-auto mb-8">
+                <div class="countdown-timer">
+                    <div class="text-lg font-semibold mb-2">Million Hearts March Countdown:</div>
+                    <div id="countdown-display" class="text-2xl font-black"></div>
+                </div>
+            </div>
+            <div class="space-x-4">
+                <a href="fundraiser.html" class="btn-fun text-xl py-4 px-8 wiggle">
+                    💝 Join the March
+                </a>
+                <a href="events.html" class="btn-fun text-xl py-4 px-8 wiggle">
+                    🎪 Upcoming Events
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Logo & Mission -->
+                <div class="md:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <div class="text-3xl mr-3 wiggle">🏳️‍🌈</div>
+                        <div>
+                            <div class="text-xl font-black fun-title">Million Hearts March</div>
+                            <div class="text-sm font-bold text-gray-400">Humanity Evolve</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 font-semibold mb-4">
+                        Building America's safest LGBTQ+ community sanctuary on 160 acres in Casa Grande, Arizona. 
+                        A place where every person can live authentically without fear.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="mailto:humanityevolve23@gmail.com" class="text-2xl hover:text-yellow-400 transition-colors wiggle">📧</a>
+                        <a href="tel:+14803986718" class="text-2xl hover:text-yellow-400 transition-colors wiggle">📱</a>
+                        <a href="https://instagram.com/millionheartsmarch" class="text-2xl hover:text-yellow-400 transition-colors wiggle">📸</a>
+                        <a href="https://facebook.com/millionheartsmarch" class="text-2xl hover:text-yellow-400 transition-colors wiggle">👥</a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-black fun-title mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-white font-semibold transition-colors">🏠 Home</a></li>
+                        <li><a href="fundraiser.html" class="text-gray-300 hover:text-white font-semibold transition-colors">💝 Donate</a></li>
+                        <li><a href="events.html" class="text-gray-300 hover:text-white font-semibold transition-colors">🎪 Events</a></li>
+                        <li><a href="bricks.html" class="text-gray-300 hover:text-white font-semibold transition-colors">🧱 Memorial Bricks</a></li>
+                        <li><a href="shop.html" class="text-gray-300 hover:text-white font-semibold transition-colors">🛍️ Shop</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-black fun-title mb-4">Contact Us</h3>
+                    <ul class="space-y-2 text-gray-300 font-semibold">
+                        <li>📧 humanityevolve23@gmail.com</li>
+                        <li>📱 (480) 398-6718</li>
+                        <li>🌐 millionheartsmarch.com</li>
+                        <li>📍 Casa Grande, Arizona</li>
+                        <li>⏰ 24-hour response promise</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400 font-semibold">
+                    © 2024 Million Hearts March - Humanity Evolve. Building love, safety, and community for all. 🌈💝
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.textContent = '✕';
+            } else {
+                menu.classList.add('hidden');
+                icon.textContent = '☰';
+            }
+        }
+
+        // Countdown Timer
+        function updateCountdown() {
+            const targetDate = new Date('December 31, 2025 23:59:59').getTime();
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('countdown-display').innerHTML = 
+                `${days}d ${hours}h ${minutes}m ${seconds}s until our goal!`;
+
+            if (distance < 0) {
+                document.getElementById('countdown-display').innerHTML = "🎉 Campaign Complete! 🎉";
+            }
+        }
+
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // Initial call
+
+        // Form submission handlers
+        function submitGeneralContact(event) {
+            event.preventDefault();
+            showSuccessMessage('general');
+        }
+
+        function submitMediaContact(event) {
+            event.preventDefault();
+            showSuccessMessage('media');
+        }
+
+        function showSuccessMessage(type) {
+            const messages = {
+                general: {
+                    icon: '💬',
+                    title: 'Message Sent!',
+                    text: 'Thank you for reaching out! We\'ll respond within 24 hours.',
+                    color: 'green'
+                },
+                media: {
+                    icon: '📰',
+                    title: 'Media Request Received!',
+                    text: 'Thank you for your interest in our story! We\'ll contact you within 24 hours.',
+                    color: 'blue'
+                }
+            };
+
+            const msg = messages[type];
+            
+            // Create success modal
+            const modal = document.createElement('div');
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.5);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 1000;
+            `;
+            
+            modal.innerHTML = `
+                <div style="background: white; padding: 2rem; border-radius: 20px; text-align: center; max-width: 500px; margin: 1rem;">
+                    <div style="font-size: 4rem; margin-bottom: 1rem;" class="wiggle">${msg.icon}</div>
+                    <h2 style="font-size: 2rem; font-weight: 900; margin-bottom: 1rem; color: ${msg.color === 'green' ? '#059669' : '#2563eb'};">${msg.title}</h2>
+                    <p style="font-size: 1.2rem; font-weight: 600; margin-bottom: 2rem; color: #374151;">${msg.text}</p>
+                    <button onclick="this.parentElement.parentElement.remove()" style="background: linear-gradient(45deg, #ff6b6b, #4ecdc4); border: none; color: white; font-weight: bold; border-radius: 50px; padding: 15px 30px; font-size: 1.1rem; cursor: pointer;">
+                        🌈 Awesome!
+                    </button>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+            
+            // Reset form
+            event.target.reset();
+        }
+
+        // Add scroll animations
+        function addScrollAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = 'fadeInUp 0.8s ease forwards';
+                    }
+                });
+            });
+
+            document.querySelectorAll('.contact-card, .social-card').forEach(card => {
+                observer.observe(card);
+            });
+        }
+
+        // Initialize animations when page loads
+        document.addEventListener('DOMContentLoaded', addScrollAnimations);
+
+        // Add CSS for fade in animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
+
+                

@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Humanity Evolve - Million Hearts March | America's Safest LGBTQ+ Community</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Open+Sans:wght@400;600;700;800&display=swap');
+        
+        :root {
+            --primary-600: #7c3aed;
+            --primary-700: #6d28d9;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+        
+        .fun-title {
+            font-family: 'Fredoka One', cursive;
+        }
+        
+        .big-title {
+            font-family: 'Fredoka One', cursive;
+            font-size: 4rem;
+            line-height: 1.1;
+        }
+        
+        @media (max-width: 768px) {
+            .big-title {
+                font-size: 2.5rem;
+            }
+        }
+        
+        .rainbow-card {
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7, #dda0dd);
+            background-size: 400% 400%;
+            animation: rainbow 8s ease infinite;
+        }
+        
+        @keyframes rainbow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        .wiggle {
+            animation: wiggle 2s ease-in-out infinite;
+        }
+        
+        @keyframes wiggle {
+            0%, 7% { transform: rotateZ(0); }
+            15% { transform: rotateZ(-15deg); }
+            20% { transform: rotateZ(10deg); }
+            25% { transform: rotateZ(-10deg); }
+            30% { transform: rotateZ(6deg); }
+            35% { transform: rotateZ(-4deg); }
+            40%, 100% { transform: rotateZ(0); }
+        }
+        
+        .bouncy-text {
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        
+        .btn-fun {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1);
+            background-size: 300% 300%;
+            animation: gradient-shift 3s ease infinite;
+            border: none;
+            color: white;
+            font-weight: 800;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-fun:hover {
+            transform: scale(1.05);
+        }
+        
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .countdown-box {
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+            border-radius: 20px;
+            padding: 2rem;
+            color: white;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            transform: translateY(-2px);
+        }
+        
+        .timeline-item {
+            margin-bottom: 2rem;
+        }
+        
+        .security-card, .merch-item, .tier-card {
+            transition: all 0.3s ease;
+        }
+        
+        .security-card:hover, .merch-item:hover, .tier-card:hover {
+            transform: translateY(-5px) scale(1.02);
+        }
+        
+        .brick-option {
+            transition: all 0.3s ease;
+        }
+        
+        .brick-option:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Enhanced Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="text-4xl mr-3 wiggle">🏳️‍🌈</div>
+                    <div>
+                        <h1 class="text-2xl font-black fun-title">Humanity Evolve</h1>
+                        <p class="text-sm font-bold text-gray-600">Million Hearts March</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link font-bold text-lg text-primary-600">
+                        🏠 Home
+                    </a>
+                    <a href="about.html" class="nav-link font-bold text-lg hover:text-primary-600 transition-colors">
+                        📖 About
+                    </a>
+                    <a href="shop.html" class="nav-link font-bold text-lg hover:text-primary-600 transition-colors">
+                        🛍️ Shop
+                    </a>
+                    <a href="fundraiser.html" class="nav-link font-bold text-lg hover:text-primary-600 transition-colors">
+                        💝 Fundraiser
+                    </a>
+                    <a href="events.html" class="nav-link font-bold text-lg hover:text-primary-600 transition-colors">
+                        🎉 Events
+                    </a>
+                    <a href="contact.html" class="nav-link font-bold text-lg hover:text-primary-600 transition-colors">
+                        📞 Contact
+                    </a>
+                    <a href="partner.html" class="nav-link font-bold text-lg hover:text-primary-600 transition-colors">
+                        🤝 Partner With Us
+                    </a>
+                        <a href="bricks.html" class="nav-link font-bold text-lg hover:text-primary-600 transition-colors">
+    🧱 Digital Wall
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-3xl" onclick="toggleMobileMenu()">
+                    <span id="menu-icon">☰</span>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation Menu -->
+            <div id="mobile-menu" class="md:hidden hidden bg-white border-t-2 border-gray-200">
+                <div class="py-4 space-y-4">
+                    <a href="index.html" class="block nav-link font-bold text-lg text-primary-600 px-4 py-2">
+                        🏠 Home
+                    </a>
+                    <a href="about.html" class="block nav-link font-bold text-lg hover:text-primary-600 transition-colors px-4 py-2">
+                        📖 About
+                    </a>
+                    <a href="shop.html" class="block nav-link font-bold text-lg hover:text-primary-600 transition-colors px-4 py-2">
+                        🛍️ Shop
+                    </a>
+                    <a href="fundraiser.html" class="block nav-link font-bold text-lg hover:text-primary-600 transition-colors px-4 py-2">
+                        💝 Fundraiser
+                    </a>
+                    <a href="events.html" class="block nav-link font-bold text-lg hover:text-primary-600 transition-colors px-4 py-2">
+                        🎉 Events
+                    </a>
+                    <a href="contact.html" class="block nav-link font-bold text-lg hover:text-primary-600 transition-colors px-4 py-2">
+                        📞 Contact
+                    </a>
+                    <a href="partner.html" class="block nav-link font-bold text-lg hover:text-primary-600 transition-colors px-4 py-2">
+                        🤝 Partner With Us
+                    </a>
+                        <a href="bricks.html" class="nav-link font-bold text-lg hover:text-primary-600 transition-colors">
+    🧱 Digital Wall
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="rainbow-card py-20">
+        <div class="container mx-auto px-4 text-center text-white">
+            <h1 class="big-title mb-8 bouncy-text">
+                🏳️‍🌈 Million Hearts March 🏳️‍🌈
+            </h1>
+            <p class="text-3xl font-bold mb-8 wiggle">
+                Building America's Safest LGBTQ+ Community
+            </p>
+            <p class="text-xl mb-12 max-w-4xl mx-auto font-semibold">
+                160 acres in Casa Grande, Arizona • Secure walls • Container homes • Community center • 
+                Memorial gardens • Where love wins and everyone is safe to be themselves
+            </p>
+            
+            <!-- Countdown Timer -->
+            <div class="countdown-box max-w-4xl mx-auto mb-12">
+                <h2 class="text-3xl font-black mb-6 bouncy-text">🎯 Fundraising Deadline</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                    <div class="bg-white bg-opacity-20 rounded-2xl p-4">
+                        <div class="text-4xl font-black" id="days">000</div>
+                        <div class="text-lg font-bold">Days</div>
+                    </div>
+                    <div class="bg-white bg-opacity-20 rounded-2xl p-4">
+                        <div class="text-4xl font-black" id="hours">00</div>
+                        <div class="text-lg font-bold">Hours</div>
+                    </div>
+                    <div class="bg-white bg-opacity-20 rounded-2xl p-4">
+                        <div class="text-4xl font-black" id="minutes">00</div>
+                        <div class="text-lg font-bold">Minutes</div>
+                    </div>
+                    <div class="bg-white bg-opacity-20 rounded-2xl p-4">
+                        <div class="text-4xl font-black" id="seconds">00</div>
+                        <div class="text-lg font-bold">Seconds</div>
+                    </div>
+                </div>
+                <p class="text-2xl font-bold mt-6">Until December 31, 2025</p>
+            </div>
+
+            <div class="space-y-6">
+                <button class="btn-fun text-2xl py-6 px-12 wiggle">
+                    💝 Donate Now - Every Heart Matters
+                </button>
+                <br>
+                <button class="btn-fun text-xl py-4 px-8">
+                    🧱 Buy a Brick - Build Our Community
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Stats -->
+    <section class="bg-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+                <div class="card p-8 rounded-2xl">
+                    <div class="text-6xl mb-4 wiggle">🎯</div>
+                    <h3 class="text-3xl font-black mb-2">$5,000,000</h3>
+                    <p class="text-xl font-bold">Fundraising Goal</p>
+                </div>
+                <div class="card p-8 rounded-2xl">
+                    <div class="text-6xl mb-4 wiggle">🏞️</div>
+                    <h3 class="text-3xl font-black mb-2">160 Acres</h3>
+                    <p class="text-xl font-bold">Secure Community</p>
+                </div>
+                <div class="card p-8 rounded-2xl">
+                    <div class="text-6xl mb-4 wiggle">🏠</div>
+                    <h3 class="text-3xl font-black mb-2">900+</h3>
+                    <p class="text-xl font-bold">Container Homes</p>
+                </div>
+                <div class="card p-8 rounded-2xl">
+                    <div class="text-6xl mb-4 wiggle">🛡️</div>
+                    <h3 class="text-3xl font-black mb-2">100%</h3>
+                    <p class="text-xl font-bold">Safe & Secure</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="bg-gray-100 py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="big-title text-center text-gray-900 mb-16 bouncy-text">
+                📅 Our Journey to Safety
+            </h2>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="timeline-item">
+                    <div class="rainbow-card p-8 rounded-2xl shadow-xl">
+                        <div class="flex items-center mb-6">
+                            <div class="text-6xl mr-6 wiggle">🎉</div>
+                            <div>
+                                <h3 class="text-3xl font-black">June 12, 2026</h3>
+                                <p class="text-xl font-bold">Pulse Nightclub 10th Anniversary</p>
+                            </div>
+                        </div>
+                        <p class="text-xl font-semibold">Memorial event honoring the 49 lives lost at Pulse. Our first major event with temporary structures if land is secured.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="rainbow-card p-8 rounded-2xl shadow-xl">
+                        <div class="flex items-center mb-6">
+                            <div class="text-6xl mr-6 wiggle">🇺🇸</div>
+                            <div>
+                                <h3 class="text-3xl font-black">July 4, 2026</h3>
+                                <p class="text-xl font-bold">America's 250th Birthday</p>
+                            </div>
+                        </div>
+                        <p class="text-xl font-semibold">Celebrating America's Semiquincentennial with a focus on equality, progress, and the ongoing fight for LGBTQ+ rights.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="rainbow-card p-8 rounded-2xl shadow-xl">
+                        <div class="flex items-center mb-6">
+                            <div class="text-6xl mr-6 wiggle">🏗️</div>
+                            <div>
+                                <h3 class="text-3xl font-black">2026-2030</h3>
+                                <p class="text-xl font-bold">Phase 1 Construction</p>
+                            </div>
+                        </div>
+                        <p class="text-xl font-semibold">Building the security walls, first container homes, community center, and essential infrastructure.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="rainbow-card p-8 rounded-2xl shadow-xl">
+                        <div class="flex items-center mb-6">
+                            <div class="text-6xl mr-6 wiggle">🎊</div>
+                            <div>
+                                <h3 class="text-3xl font-black">2030+</h3>
+                                <p class="text-xl font-bold">Grand Opening</p>
+                            </div>
+                        </div>
+                        <p class="text-xl font-semibold">Full community operational with all amenities. The safest LGBTQ+ community in America opens its doors.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Million Hearts March -->
+    <section class="bg-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="big-title text-gray-900 mb-8 bouncy-text">
+                    🧱 The Million Hearts March
+                </h2>
+                <p class="text-3xl text-gray-600 mb-8 font-bold wiggle">
+                    Inspired by the Million Man March for Civil Rights
+                </p>
+                <p class="text-xl text-gray-700 max-w-5xl mx-auto font-semibold leading-relaxed">
+                    Buy a brick that becomes a permanent part of our community. Your brick will help build the pathways, 
+                    memorials, and the very walls that keep our community safe. Each brick represents a heart, a story, 
+                    and a commitment to LGBTQ+ safety and equality.
+                </p>
+            </div>
+
+            <!-- Enhanced Brick Options -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+                <div class="brick-option card p-8">
+                    <div class="text-center">
+                        <div class="text-8xl mb-6 wiggle">💻</div>
+                        <h3 class="text-3xl font-black mb-6 text-white">Digital Brick - $1</h3>
+                        <p class="text-lg font-semibold mb-8 text-white">
+                            Share your story, tribute, or message of love. Your words become part of our digital memorial wall, 
+                            accessible to visitors and preserved forever as part of our community's history.
+                        </p>
+                        <ul class="text-left font-semibold mb-8 space-y-3 text-lg text-white">
+                            <li>✓ Personal message or tribute</li>
+                            <li>✓ Digital memorial wall display</li>
+                            <li>✓ Searchable community archive</li>
+                            <li>✓ Share with QR codes on-site</li>
+                        </ul>
+                        <button class="btn-fun w-full py-4 text-xl">
+                            Buy Digital Brick - $1
+                        </button>
+                    </div>
+                </div>
+
+                <div class="brick-option card p-8 border-8 border-yellow-400">
+                    <div class="text-center">
+                        <div class="bg-yellow-500 text-black px-4 py-2 rounded-full text-lg font-black mb-4 wiggle">MOST POPULAR</div>
+                        <div class="text-8xl mb-6 wiggle">🧱</div>
+                        <h3 class="text-3xl font-black mb-6 text-white">Physical Brick - $10</h3>
+                        <p class="text-lg font-semibold mb-8 text-white">
+                            Customize a real brick that becomes part of our pathways, memorials, and protective walls. 
+                            Your brick will be physically part of our community forever.
+                        </p>
+                        <ul class="text-left font-semibold mb-8 space-y-3 text-lg text-white">
+                            <li>✓ Custom engraving or design</li>
+                            <li>✓ Choose location (pathway/memorial/wall)</li>
+                            <li>✓ GPS coordinates provided</li>
+                            <li>✓ Certificate of placement</li>
+                            <li>✓ Photo of installed brick</li>
+                        </ul>
+                        <button class="btn-fun w-full py-4 text-xl">
+                            Buy Physical Brick - $10
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPACT Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- About -->
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="text-3xl mr-3 wiggle">🏳️‍🌈</div>
+                        <h3 class="text-xl font-black fun-title">Humanity Evolve</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4 font-semibold">
+                        Building America's safest LGBTQ+ community on 160 acres in Casa Grande, Arizona.
+                    </p>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-black mb-4 bouncy-text">Contact</h4>
+                    <ul class="space-y-2 text-gray-300 font-semibold">
+                        <li>📧 humanityevolve23@gmail.com</li>
+                        <li>📱 (480) 398-6718</li>
+                        <li>🌐 millionheartsmarch.com</li>
+                        <li>📍 Casa Grande, Arizona</li>
+                    </ul>
+                </div>
+
+                <!-- Goal -->
+                <div class="text-center md:text-right">
+                    <p class="font-black text-yellow-400 text-2xl wiggle">🎯 $5,000,000 Goal</p>
+                    <p class="font-semibold text-lg text-gray-300">by December 31, 2025</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-8 p-6 rainbow-card rounded-2xl">
+                <h3 class="text-2xl font-black mb-2 bouncy-text">🏳️‍🌈 Together We Rise 🏳️‍🌈</h3>
+                <p class="text-lg font-bold">Building a world where love wins and everyone is safe to be themselves.</p>
+            </div>
+
+            <div class="text-center mt-6 text-gray-400">
+                <p>© 2024 Humanity Evolve. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Enhanced Countdown Timer
+        function updateCountdown() {
+            const deadline = new Date('December 31, 2025 23:59:59').getTime();
+            const now = new Date().getTime();
+            const timeLeft = deadline - now;
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // Initial call
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+            
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.remove('hidden');
+                menuIcon.textContent = '✕';
+            } else {
+                mobileMenu.classList.add('hidden');
+                menuIcon.textContent = '☰';
+            }
+        }
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+                document.getElementById('menu-icon').textContent = '☰';
+            });
+        });
+
+        // Fun interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click effects to cards
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                card.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - Humanity Evolve | Million Hearts March Fundraiser</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Open+Sans:wght@400;600;700;800&display=swap');
+        
+        :root {
+            --primary-600: #7c3aed;
+            --primary-700: #6d28d9;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+        
+        .fun-title {
+            font-family: 'Fredoka One', cursive;
+        }
+        
+        .big-title {
+            font-family: 'Fredoka One', cursive;
+            font-size: 4rem;
+            line-height: 1.1;
+        }
+        
+        @media (max-width: 768px) {
+            .big-title {
+                font-size: 2.5rem;
+            }
+        }
+        
+        .rainbow-card {
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7, #dda0dd);
+            background-size: 400% 400%;
+            animation: rainbow 8s ease infinite;
+        }
+        
+        @keyframes rainbow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .wiggle {
+            animation: wiggle 2s ease-in-out infinite;
+        }
+        
+        @keyframes wiggle {
+            0%, 7% { transform: rotateZ(0); }
+            15% { transform: rotateZ(-15deg); }
+            20% { transform: rotateZ(10deg); }
+            25% { transform: rotateZ(-10deg); }
+            30% { transform: rotateZ(6deg); }
+            35% { transform: rotateZ(-4deg); }
+            40%, 100% { transform: rotateZ(0); }
+        }
+        
+        .bouncy-text {
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        
+        .btn-fun {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1);
+            background-size: 300% 300%;
+            animation: gradient-shift 3s ease infinite;
+            border: none;
+            color: white;
+            font-weight: 800;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-fun:hover {
+            transform: scale(1.05);
+        }
+        
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            transform: translateY(-2px);
+        }
+        
+        .event-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 3px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .event-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        
+        .event-card.featured {
+            border-color: #ffd700;
+            background: linear-gradient(135deg, #fff9e6, #ffffff);
+        }
+        
+        .event-card.featured::before {
+            content: '⭐ HAPPENING NOW ⭐';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(45deg, #ffd700, #ffed4e);
+            color: #8b5a00;
+            font-weight: 800;
+            text-align: center;
+            padding: 0.5rem;
+            font-size: 0.8rem;
+        }
+        
+        .event-card.featured .event-content {
+            margin-top: 1rem;
+        }
+        
+        .event-card.urgent {
+            border-color: #ff4444;
+            background: linear-gradient(135deg, #ffe6e6, #ffffff);
+        }
+        
+        .event-card.urgent::before {
+            content: '🔥 ACTIVE FUNDRAISER 🔥';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(45deg, #ff4444, #ff6666);
+            color: white;
+            font-weight: 800;
+            text-align: center;
+            padding: 0.5rem;
+            font-size: 0.8rem;
+        }
+        
+        .event-date {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 1rem;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .event-status {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .status-active {
+            background: linear-gradient(45deg, #ff4444, #ff6666);
+            color: white;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .status-upcoming {
+            background: linear-gradient(45deg, #4ade80, #22c55e);
+            color: white;
+        }
+        
+        .status-registration {
+            background: linear-gradient(45deg, #f59e0b, #d97706);
+            color: white;
+        }
+        
+        .status-planning {
+            background: linear-gradient(45deg, #8b5cf6, #7c3aed);
+            color: white;
+        }
+        
+        .countdown-timer {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            margin: 1rem 0;
+        }
+        
+        .countdown-item {
+            display: inline-block;
+            margin: 0 0.5rem;
+            text-align: center;
+        }
+        
+        .countdown-number {
+            display: block;
+            font-size: 2rem;
+            font-weight: 800;
+            line-height: 1;
+        }
+        
+        .countdown-label {
+            font-size: 0.8rem;
+            opacity: 0.9;
+        }
+        
+        .event-benefits {
+            background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border: 2px solid #10b981;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .benefit-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            backdrop-filter: blur(5px);
+        }
+        
+        .modal-content {
+            background: white;
+            margin: 2% auto;
+            padding: 2rem;
+            border-radius: 20px;
+            width: 95%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: modalSlideIn 0.3s ease;
+        }
+        
+        @keyframes modalSlideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+        }
+        
+        .close:hover {
+            color: #000;
+        }
+        
+        .event-filter {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .filter-btn {
+            background: #f3f4f6;
+            border: 2px solid #d1d5db;
+            color: #374151;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 0.25rem;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            background: linear-gradient(45deg, #7c3aed, #a855f7);
+            color: white;
+            border-color: #7c3aed;
+            transform: translateY(-2px);
+        }
+        
+        .rsvp-form {
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 2px solid #0ea5e9;
+        }
+        
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        
+        .form-group label {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #0f172a;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #cbd5e1;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #0ea5e9;
+        }
+        
+        .wedding-section {
+            background: linear-gradient(135deg, #fdf2f8, #fce7f3);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 3px solid #ec4899;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Enhanced Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="text-4xl mr-3 wiggle">🏳️‍🌈</div>
+                    <div>
+                        <h1 class="text-2xl font-black fun-title">Humanity Evolve</h1>
+                        <p class="text-sm font-bold text-gray-600">Million Hearts March</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link font-bold text-lg hover:text-primary-600 transition-colors">
+                        🏠 Home
+                    </a>
+                    <a href="about.html" class="nav-link font-bold text-lg hover:text-primary-600 transition-colors">
+                        📖 About
+                    </a>
+                    <a href="shop.html" class="nav-link font-bold text-lg hover:text-primary-600 transition-colors">
+                        🛍️ Shop
+                    </a>
+                    <a href="bricks.html" class="nav-link font-bold text-lg hover:text-primary-600 transition-colors">
+                        🧱 Digital Wall
+                    </a>
+                    <a href="fundraiser.html" class="nav-link font-bold text-lg hover:text-primary-600 transition-colors">
+                        💝 Fundraiser
+                    </a>
+                    <a href="events.html" class="nav-link font-bold text-lg text-primary-600">
+                        🎉 Events
+                    </a>
+                    <a href="contact.html" class="nav-link font-bold text-lg hover:text-primary-600 transition-colors">
+                        📞 Contact
+                    </a>
+                    <a href="partner.html" class="nav-link font-bold text-lg hover:text-primary-600 transition-colors">
+                        🤝 Partner With Us
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-3xl" onclick="toggleMobileMenu()">
+                    <span id="menu-icon">☰</span>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation Menu -->
+            <div id="mobile-menu" class="md:hidden hidden bg-white border-t-2 border-gray-200">
+                <div class="py-4 space-y-4">
+                    <a href="index.html" class="block nav-link font-bold text-lg hover:text-primary-600 transition-colors px-4 py-2">
+                        🏠 Home
+                    </a>
+                    <a href="about.html" class="block nav-link font-bold text-lg hover:text-primary-600 transition-colors px-4 py-2">
+                        📖 About
+                    </a>
+                    <a href="shop.html" class="block nav-link font-bold text-lg hover:text-primary-600 transition-colors px-4 py-2">
+                        🛍️ Shop
+                    </a>
+                    <a href="bricks.html" class="block nav-link font-bold text-lg hover:text-primary-600 transition-colors px-4 py-2">
+                        🧱 Bricks
+                    </a>
+                    <a href="fundraiser.html" class="block nav-link font-bold text-lg hover:text-primary-600 transition-colors px-4 py-2">
+                        💝 Fundraiser
+                    </a>
+                    <a href="events.html" class="block nav-link font-bold text-lg text-primary-600 px-4 py-2">
+                        🎉 Events
+                    </a>
+                    <a href="contact.html" class="block nav-link font-bold text-lg hover:text-primary-600 transition-colors px-4 py-2">
+                        📞 Contact
+                    </a>
+                    <a href="partner.html" class="block nav-link font-bold text-lg hover:text-primary-600 transition-colors px-4 py-2">
+                        🤝 Partner With Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="rainbow-card py-20">
+        <div class="container mx-auto px-4 text-center text-white">
+            <h1 class="big-title mb-8 bouncy-text">
+                🎉 Community Events
+            </h1>
+            <p class="text-3xl font-bold mb-8 wiggle">
+                Building Community • Celebrating Progress • Creating History
+            </p>
+            <p class="text-xl mb-12 max-w-4xl mx-auto font-semibold">
+                Join us for meaningful events that bring our community together as we build 
+                America's safest LGBTQ+ sanctuary in Casa Grande, Arizona. From weekly virtual gatherings 
+                to historic celebrations - every event brings us closer to our dream!
+            </p>
+        </div>
+    </section>
+
+    <!-- Event Filter -->
+    <section class="bg-gray-100 py-8">
+        <div class="container mx-auto px-4">
+            <div class="event-filter">
+                <div class="text-center">
+                    <h3 class="text-xl font-bold mb-4">🏷️ Filter Events</h3>
+                    <div class="flex flex-wrap justify-center">
+                        <button class="filter-btn active" onclick="filterEvents('all')">All Events</button>
+                        <button class="filter-btn" onclick="filterEvents('active')">🔥 Active Now</button>
+                        <button class="filter-btn" onclick="filterEvents('upcoming')">🔜 Upcoming</button>
+                        <button class="filter-btn" onclick="filterEvents('virtual')">💻 Virtual</button>
+                        <button class="filter-btn" onclick="filterEvents('fundraising')">💝 Fundraising</button>
+                        <button class="filter-btn" onclick="filterEvents('memorial')">🕯️ Memorial</button>
+                        <button class="filter-btn" onclick="filterEvents('celebration')">🎊 Celebration</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Active Fundraiser - Million Hearts March -->
+    <section class="bg-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="event-card urgent featured" data-category="active fundraising">
+                <div class="event-content">
+                    <div class="event-date">
+                        <div class="text-2xl font-black">📅 October 7 - December 31, 2025</div>
+                        <div class="text-lg font-bold">ACTIVE FUNDRAISING CAMPAIGN</div>
+                    </div>
+                    
+                    <div class="status-active event-status">🔥 ACTIVE NOW - 85 Days Left!</div>
+                    
+                    <h2 class="text-4xl font-black mb-6 fun-title bouncy-text">
+                        💝 Million Hearts March Fundraiser
+                    </h2>
+                    
+                    <p class="text-xl font-bold mb-6 text-gray-700">
+                        Our MAIN fundraising campaign to gather the donations needed to open America's 
+                        safest LGBTQ+ sanctuary! Every donation brings us closer to breaking ground in 2026.
+                    </p>
+                    
+                    <!-- Countdown Timer -->
+                    <div class="countdown-timer">
+                        <h3 class="text-xl font-bold mb-4">⏰ Fundraiser Countdown</h3>
+                        <div id="countdown-fundraiser">
+                            <div class="countdown-item">
+                                <span class="countdown-number" id="days-fundraiser">000</span>
+                                <span class="countdown-label">Days</span>
+                            </div>
+                            <div class="countdown-item">
+                                <span class="countdown-number" id="hours-fundraiser">00</span>
+                                <span class="countdown-label">Hours</span>
+                            </div>
+                            <div class="countdown-item">
+                                <span class="countdown-number" id="minutes-fundraiser">00</span>
+                                <span class="countdown-label">Minutes</span>
+                            </div>
+                            <div class="countdown-item">
+                                <span class="countdown-number" id="seconds-fundraiser">00</span>
+                                <span class="countdown-label">Seconds</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="event-benefits">
+                        <h4 class="text-xl font-bold mb-4">🎯 Campaign Goals:</h4>
+                        <div class="benefit-item">💰 Raise $5,000,000 for sanctuary development</div>
+                        <div class="benefit-item">🏗️ Fund infrastructure and safety systems</div>
+                        <div class="benefit-item">🏠 Build community housing and facilities</div>
+                        <div class="benefit-item">🌈 Create America's safest LGBTQ+ space</div>
+                        <div class="benefit-item">🧱 Every donation gets a commemorative brick</div>
+                        <div class="benefit-item">📍 160 acres in Casa Grande, Arizona</div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                        <a href="fundraiser.html" class="btn-fun text-xl py-4 px-8 wiggle text-center">
+                            💝 DONATE NOW
+                        </a>
+                        <a href="bricks.html" class="btn-fun text-xl py-4 px-8 wiggle text-center">
+                            🧱 View Brick Wall
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Weekly Virtual Gatherings -->
+    <section class="bg-gray-50 py-16">
+        <div class="container mx-auto px-4">
+            <div class="event-card featured" data-category="active virtual upcoming">
+                <div class="event-content">
+                    <div class="event-date">
+                        <div class="text-2xl font-black">📅 Every Tuesday Evening</div>
+                        <div class="text-lg font-bold">Starting October 14, 2025</div>
+                        <div class="text-sm font-bold">7:00 PM EST / 4:00 PM PST</div>
+                    </div>
+                    
+                    <div class="status-upcoming event-status">🔄 Weekly - Next: Oct 14th</div>
+                    
+                    <h2 class="text-3xl font-black mb-6 fun-title bouncy-text">
+                        💻 Tuesday Community Circles
+                    </h2>
+                    
+                    <p class="text-xl font-bold mb-6 text-gray-700">
+                        Join us EVERY Tuesday for virtual community building! Different activities, 
+                        giveaways, topics, and ideas while we build our amazing community together.
+                    </p>
+                    
+                    <div class="event-benefits">
+                        <h4 class="text-xl font-bold mb-4">🎁 What We'll Do:</h4>
+                        <div class="benefit-item">🎮 Fun community activities and games</div>
+                        <div class="benefit-item">🎁 Weekly giveaways and prizes</div>
+                        <div class="benefit-item">💬 Discuss sanctuary progress and ideas</div>
+                        <div class="benefit-item">🤝 Meet other founding builders</div>
+                        <div class="benefit-item">📢 Get exclusive project updates</div>
+                        <div class="benefit-item">💡 Share feedback and suggestions</div>
+                        <div class="benefit-item">🌈 Build lasting friendships</div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <button onclick="openRSVP('tuesday-circles')" class="btn-fun text-xl py-4 px-8 wiggle w-full md:w-auto">
+                            🎫 Join Our Next Circle - FREE
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Events Timeline -->
+    <section class="bg-white py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="big-title text-center text-gray-900 mb-16 bouncy-text">
+                🗓️ 2026 Event Timeline
+            </h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8" id="events-grid">
+                
+                <!-- January Celebration -->
+                <div class="event-card" data-category="upcoming virtual celebration">
+                    <div class="event-date">
+                        <div class="text-xl font-black">📅 First Week January 2026</div>
+                        <div class="text-sm font-bold">Virtual Event</div>
+                    </div>
+                    
+                    <div class="status-planning event-status">📋 In Planning</div>
+                    
+                    <h3 class="text-2xl font-black mb-4 fun-title">
+                        🎊 Million Hearts Celebration
+                    </h3>
+                    
+                    <p class="text-lg font-semibold mb-4 text-gray-700">
+                        Virtual celebration to thank all our amazing donors and share what we 
+                        accomplished during the Million Hearts March fundraiser!
+                    </p>
+                    
+                    <div class="event-benefits">
+                        <div class="benefit-item">🎉 Thank you celebration for all donors</div>
+                        <div class="benefit-item">📊 Full fundraising results presentation</div>
+                        <div class="benefit-item">🏗️ 2026 construction timeline reveal</div>
+                        <div class="benefit-item">🎁 Special recognition for top supporters</div>
+                        <div class="benefit-item">🎵 Live entertainment and music</div>
+                    </div>
+                    
+                    <div class="mt-6">
+                        <button onclick="openRSVP('january-celebration')" class="btn-fun w-full py-3">
+                            📝 Get Updates - FREE
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Spring Fundraiser -->
+                <div class="event-card" data-category="upcoming fundraising">
+                    <div class="event-date">
+                        <div class="text-xl font-black">📅 April 2026</div>
+                        <div class="text-sm font-bold">Location TBD</div>
+                    </div>
+                    
+                    <div class="status-planning event-status">📋 In Planning</div>
+                    
+                    <h3 class="text-2xl font-black mb-4 fun-title">
+                        🌸 Spring Fundraiser Gala
+                    </h3>
+                    
+                    <p class="text-lg font-semibold mb-4 text-gray-700">
+                        Elegant dinner event to raise final funds before our Pulse Memorial Week. 
+                        200 in-person tickets plus virtual attendance options!
+                    </p>
+                    
+                    <div class="event-benefits">
+                        <div class="benefit-item">🍽️ $50 dinner tickets (200 available)</div>
+                        <div class="benefit-item">💻 Virtual tickets - any donation amount</div>
+                        <div class="benefit-item">📊 Sanctuary progress presentation</div>
+                        <div class="benefit-item">🎵 Live entertainment and speakers</div>
+                        <div class="benefit-item">🏆 Recognition ceremony</div>
+                        <div class="benefit-item">🎁 Silent auction and prizes</div>
+                    </div>
+                    
+                    <div class="mt-6">
+                        <button onclick="openRSVP('spring-fundraiser')" class="btn-fun w-full py-3">
+                            🎫 Early Bird Interest
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Groundbreaking Weekend -->
+                <div class="event-card" data-category="upcoming celebration">
+                    <div class="event-date">
+                        <div class="text-xl font-black">📅 Last Weekend May 2026</div>
+                        <div class="text-sm font-bold">Casa Grande, Arizona</div>
+                    </div>
+                    
+                    <div class="status-planning event-status">📋 In Planning</div>
+                    
+                    <h3 class="text-2xl font-black mb-4 fun-title">
+                        🏗️ FREE Groundbreaking Weekend
+                    </h3>
+                    
+                    <p class="text-lg font-semibold mb-4 text-gray-700">
+                        Historic weekend for our community! Tour the sanctuary site, 
+                        participate in groundbreaking ceremony, and see your brick locations!
+                    </p>
+                    
+                    <div class="event-benefits">
+                        <div class="benefit-item">🆓 Completely FREE for all community</div>
+                        <div class="benefit-item">🚌 Free transportation from major cities</div>
+                        <div class="benefit-item">🏗️ Official groundbreaking ceremony</div>
+                        <div class="benefit-item">📍 Find your commemorative brick spot</div>
+                        <div class="benefit-item">🍔 Food trucks and refreshments</div>
+                        <div class="benefit-item">📸 Professional photography</div>
+                        <div class="benefit-item">🎪 Family-friendly activities</div>
+                    </div>
+                    
+                    <div class="mt-6">
+                        <button onclick="openRSVP('groundbreaking')" class="btn-fun w-full py-3">
+                            🎫 Reserve Spot - FREE
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Pulse Memorial Week -->
+                <div class="event-card" data-category="upcoming memorial">
+                    <div class="event-date">
+                        <div class="text-xl font-black">📅 June 10-17, 2026</div>
+                        <div class="text-sm font-bold">June 12th - 10 Year Memorial</div>
+                    </div>
+                    
+                    <div class="status-planning event-status">📋 In Planning</div>
+                    
+                    <h3 class="text-2xl font-black mb-4 fun-title">
+                        🕯️ Pulse Memorial Week
+                    </h3>
+                    
+                                        <p class="text-lg font-semibold mb-4 text-gray-700">
+                        A week of remembrance, healing, and hope. Honoring the 10-year anniversary 
+                        of the Pulse nightclub tragedy and all LGBTQ+ hate crime victims.
+                    </p>
+                    
+                    <div class="event-benefits">
+                        <div class="benefit-item">🕯️ June 12th - 10-year Pulse memorial ceremony</div>
+                        <div class="benefit-item">💜 Daily remembrance activities</div>
+                        <div class="benefit-item">🌈 Healing circles and support groups</div>
+                        <div class="benefit-item">📚 Educational workshops on safety</div>
+                        <div class="benefit-item">🎨 Art therapy and memorial creation</div>
+                        <div class="benefit-item">🤝 Community solidarity events</div>
+                        <div class="benefit-item">🎫 Ticketed events to support sanctuary</div>
+                    </div>
+                    
+                    <div class="mt-6">
+                        <button onclick="openRSVP('pulse-memorial')" class="btn-fun w-full py-3">
+                            🕯️ Honor & Remember
+                        </button>
+                    </div>
+                </div>
+
+                <!-- America 250 Celebration -->
+                <div class="event-card" data-category="upcoming celebration">
+                    <div class="event-date">
+                        <div class="text-xl font-black">📅 July 2-5, 2026</div>
+                        <div class="text-sm font-bold">Casa Grande, Arizona</div>
+                    </div>
+                    
+                    <div class="status-planning event-status">📋 In Planning</div>
+                    
+                    <h3 class="text-2xl font-black mb-4 fun-title">
+                        🇺🇸 America 250 Birthday Celebration
+                    </h3>
+                    
+                    <p class="text-lg font-semibold mb-4 text-gray-700">
+                        Celebrate America's 250th birthday at our sanctuary! A historic 4-day 
+                        festival showing how LGBTQ+ Americans are part of our nation's story.
+                    </p>
+                    
+                    <div class="event-benefits">
+                        <div class="benefit-item">🎆 4-day Independence celebration</div>
+                        <div class="benefit-item">🎫 Ticketed events with proceeds to sanctuary</div>
+                        <div class="benefit-item">🎵 Live music and entertainment</div>
+                        <div class="benefit-item">🍔 Food vendors and local businesses</div>
+                        <div class="benefit-item">🎪 Family activities and games</div>
+                        <div class="benefit-item">🏳️‍🌈 LGBTQ+ history exhibits</div>
+                        <div class="benefit-item">🎇 Fireworks finale on July 4th</div>
+                    </div>
+                    
+                    <div class="mt-6">
+                        <button onclick="openRSVP('america-250')" class="btn-fun w-full py-3">
+                            🎫 Early Bird Tickets
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Wedding & Party Bookings -->
+                <div class="event-card wedding-section" data-category="upcoming celebration">
+                    <div class="event-date">
+                        <div class="text-xl font-black">📅 Available 2026+</div>
+                        <div class="text-sm font-bold">Casa Grande Sanctuary</div>
+                    </div>
+                    
+                    <div class="status-registration event-status">💒 Now Booking</div>
+                    
+                    <h3 class="text-2xl font-black mb-4 fun-title">
+                        💒 Weddings & Private Events
+                    </h3>
+                    
+                    <p class="text-lg font-semibold mb-4 text-gray-700">
+                        Be among the FIRST to book your wedding or private celebration at 
+                        America's safest LGBTQ+ sanctuary! Beautiful 160-acre venue.
+                    </p>
+                    
+                    <div class="event-benefits">
+                        <div class="benefit-item">💒 LGBTQ+ weddings and commitment ceremonies</div>
+                        <div class="benefit-item">🎉 Birthday parties and anniversaries</div>
+                        <div class="benefit-item">🏢 Corporate retreats and team building</div>
+                        <div class="benefit-item">🎓 Graduation and milestone celebrations</div>
+                        <div class="benefit-item">🌈 Pride parties and community events</div>
+                        <div class="benefit-item">📸 Professional photography included</div>
+                        <div class="benefit-item">🛡️ Guaranteed safe and inclusive space</div>
+                    </div>
+                    
+                    <div class="mt-6">
+                        <button onclick="openWeddingBooking()" class="btn-fun w-full py-3">
+                            💒 Book Your Event
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Event Proposals -->
+    <section class="bg-gray-100 py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="big-title text-gray-900 mb-8 bouncy-text">
+                    💡 Your Event Ideas
+                </h2>
+                <p class="text-2xl font-bold mb-8 wiggle">
+                    Have an idea for a community event? We want to hear it!
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="event-card">
+                    <h3 class="text-2xl font-black mb-4 fun-title">🎯 Propose an Event</h3>
+                    <p class="text-lg font-semibold mb-6 text-gray-700">
+                        Want to organize a community gathering, fundraiser, or educational event? 
+                        We'll help you plan and promote it!
+                    </p>
+                    <ul class="space-y-2 mb-6 font-semibold">
+                        <li>✅ Local meetups and social gatherings</li>
+                        <li>✅ Educational workshops and seminars</li>
+                        <li>✅ Fundraising events for the sanctuary</li>
+                        <li>✅ Awareness campaigns and advocacy</li>
+                        <li>✅ Volunteer activities and service projects</li>
+                    </ul>
+                    <button onclick="openEventProposal()" class="btn-fun w-full py-3">
+                        🚀 Submit Your Idea
+                    </button>
+                </div>
+                
+                <div class="event-card">
+                    <h3 class="text-2xl font-black mb-4 fun-title">🤝 Event Partnership</h3>
+                    <p class="text-lg font-semibold mb-6 text-gray-700">
+                        Already have an event planned? Partner with us to expand your reach 
+                        and support our sanctuary mission!
+                    </p>
+                    <ul class="space-y-2 mb-6 font-semibold">
+                        <li>✅ Cross-promotion to our community</li>
+                        <li>✅ Sanctuary information booth</li>
+                        <li>✅ Fundraising opportunities</li>
+                        <li>✅ Speaker or presentation slots</li>
+                        <li>✅ Merchandise and awareness materials</li>
+                    </ul>
+                    <button onclick="openPartnership()" class="btn-fun w-full py-3">
+                        🤝 Partner With Us
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="rainbow-card py-16">
+        <div class="container mx-auto px-4 text-center text-white">
+            <h2 class="big-title mb-8 bouncy-text">
+                🎪 Every Event Builds Our Dream
+            </h2>
+            <p class="text-2xl font-bold mb-8 wiggle">
+                From weekly virtual circles to historic celebrations
+            </p>
+            <p class="text-xl mb-12 max-w-4xl mx-auto font-semibold">
+                Every event brings our community closer together and moves us toward opening 
+                America's safest LGBTQ+ sanctuary. Join us for the journey of a lifetime!
+            </p>
+            <div class="space-y-4 md:space-y-0 md:space-x-6 md:flex md:justify-center">
+                <a href="fundraiser.html" class="btn-fun text-xl py-4 px-8 wiggle block md:inline-block">
+                    💝 Support Our Mission
+                </a>
+                <button onclick="openRSVP('tuesday-circles')" class="btn-fun text-xl py-4 px-8 wiggle block md:inline-block">
+                    💻 Join Next Tuesday Circle
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP Modal -->
+    <div id="rsvp-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeRSVP()">×</span>
+            <div id="rsvp-content">
+                <!-- RSVP form will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Wedding Booking Modal -->
+    <div id="wedding-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeWeddingBooking()">×</span>
+            <div class="text-center">
+                <h2 class="text-3xl font-black mb-6 fun-title">💒 Book Your Special Event</h2>
+                <p class="text-lg font-semibold mb-8 text-gray-700">
+                    Reserve your date at America's safest LGBTQ+ sanctuary! We're now taking bookings for 2026 and beyond.
+                </p>
+                
+                <form class="rsvp-form text-left" onsubmit="submitWeddingBooking(event)">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="form-group">
+                            <label>Your Name *</label>
+                            <input type="text" required placeholder="Your full name">
+                        </div>
+                        <div class="form-group">
+                            <label>Partner's Name</label>
+                            <input type="text" placeholder="Partner's name (if applicable)">
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="form-group">
+                            <label>Email *</label>
+                            <input type="email" required placeholder="your@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number *</label>
+                            <input type="tel" required placeholder="(555) 123-4567">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Event Type *</label>
+                        <select required>
+                            <option value="">Select event type...</option>
+                            <option value="wedding">💒 Wedding Ceremony</option>
+                            <option value="commitment">💕 Commitment Ceremony</option>
+                            <option value="reception">🎉 Reception Only</option>
+                            <option value="birthday">🎂 Birthday Party</option>
+                            <option value="anniversary">💖 Anniversary Celebration</option>
+                            <option value="corporate">🏢 Corporate Event</option>
+                            <option value="graduation">🎓 Graduation Party</option>
+                            <option value="other">🌟 Other Celebration</option>
+                        </select>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="form-group">
+                            <label>Preferred Date</label>
+                            <input type="date" min="2026-01-01">
+                        </div>
+                        <div class="form-group">
+                            <label>Expected Guests</label>
+                            <select>
+                                <option value="">Select size...</option>
+                                <option value="intimate">Intimate (10-25 guests)</option>
+                                <option value="small">Small (25-50 guests)</option>
+                                <option value="medium">Medium (50-100 guests)</option>
+                                <option value="large">Large (100-200 guests)</option>
+                                <option value="xlarge">Extra Large (200+ guests)</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Budget Range</label>
+                        <select>
+                            <option value="">Select budget...</option>
+                            <option value="under-5k">Under $5,000</option>
+                            <option value="5k-10k">$5,000 - $10,000</option>
+                            <option value="10k-20k">$10,000 - $20,000</option>
+                            <option value="20k-50k">$20,000 - $50,000</option>
+                            <option value="over-50k">Over $50,000</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Event Vision & Details *</label>
+                        <textarea rows="4" required placeholder="Tell us about your dream event! Include any special requests, themes, or requirements..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Services Needed</label>
+                        <textarea rows="3" placeholder="Catering, photography, decorations, music, etc. What services would you like us to help coordinate?"></textarea>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button type="submit" class="btn-fun text-xl py-4 px-8 wiggle">
+                            💒 Submit Booking Request
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Event Proposal Modal -->
+    <div id="event-proposal-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeEventProposal()">×</span>
+            <div class="text-center">
+                <h2 class="text-3xl font-black mb-6 fun-title">🎪 Propose Your Event</h2>
+                <p class="text-lg font-semibold mb-8 text-gray-700">
+                    Help us bring the community together! Share your event idea and we'll help make it happen.
+                </p>
+                
+                <form class="rsvp-form text-left" onsubmit="submitEventProposal(event)">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="form-group">
+                            <label>Your Name *</label>
+                            <input type="text" required placeholder="Your full name">
+                        </div>
+                        <div class="form-group">
+                            <label>Email *</label>
+                            <input type="email" required placeholder="your@email.com">
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="tel" placeholder="(555) 123-4567">
+                        </div>
+                        <div class="form-group">
+                            <label>Preferred Location</label>
+                            <input type="text" placeholder="City, State">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Event Title *</label>
+                        <input type="text" required placeholder="What would you like to call your event?">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Event Type *</label>
+                        <select required>
+                            <option value="">Select event type...</option>
+                            <option value="fundraising">💝 Fundraising Event</option>
+                            <option value="social">🎉 Social Gathering</option>
+                            <option value="educational">📚 Educational Workshop</option>
+                            <option value="awareness">📢 Awareness Campaign</option>
+                            <option value="volunteer">🤝 Volunteer Activity</option>
+                            <option value="memorial">🕯️ Memorial or Remembrance</option>
+                            <option value="celebration">🎊 Community Celebration</option>
+                            <option value="other">🌟 Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="form-group">
+                            <label>Preferred Date</label>
+                            <input type="date">
+                        </div>
+                        <div class="form-group">
+                            <label>Expected Attendance</label>
+                            <select>
+                                <option value="">Select size...</option>
+                                <option value="small">Small (10-25 people)</option>
+                                <option value="medium">Medium (25-75 people)</option>
+                                <option value="large">Large (75-200 people)</option>
+                                <option value="xlarge">Extra Large (200+ people)</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Event Description *</label>
+                        <textarea rows="4" required placeholder="Describe your event idea, goals, and how it would support our mission..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Support Needed</label>
+                        <textarea rows="3" placeholder="What kind of support would you need from Humanity Evolve? (promotion, materials, funding, etc.)"></textarea>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button type="submit" class="btn-fun text-xl py-4 px-8 wiggle">
+                            🚀 Submit Proposal
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Partnership Modal -->
+    <div id="partnership-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closePartnership()">×</span>
+            <div class="text-center">
+                <h2 class="text-3xl font-black mb-6 fun-title">🤝 Event Partnership</h2>
+                <p class="text-lg font-semibold mb-8 text-gray-700">
+                    Already planning an event? Partner with us to expand your impact and support our sanctuary mission!
+                </p>
+                
+                <form class="rsvp-form text-left" onsubmit="submitPartnership(event)">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="form-group">
+                            <label>Your Name *</label>
+                            <input type="text" required placeholder="Your full name">
+                        </div>
+                        <div class="form-group">
+                            <label>Organization</label>
+                            <input type="text" placeholder="Organization or business name">
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="form-group">
+                            <label>Email *</label>
+                            <input type="email" required placeholder="your@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="tel" placeholder="(555) 123-4567">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Event Name *</label>
+                        <input type="text" required placeholder="Name of your existing event">
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="form-group">
+                            <label>Event Date *</label>
+                            <input type="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Event Location *</label>
+                            <input type="text" required placeholder="City, State">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Event Description *</label>
+                        <textarea rows="4" required placeholder="Tell us about your event, its purpose, and expected attendance..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Partnership Opportunities *</label>
+                        <textarea rows="4" required placeholder="How would you like to partner with us? (booth space, speaking slot, fundraising component, etc.)"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Website or Social Media</label>
+                        <input type="url" placeholder="https://your-event-website.com">
+                    </div>
+                    
+                    <div class="text-center">
+                        <button type="submit" class="btn-fun text-xl py-4 px-8 wiggle">
+                            🤝 Submit Partnership Request
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- About -->
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="text-3xl mr-3 wiggle">🏳️‍🌈</div>
+                        <h3 class="text-xl font-black fun-title">Humanity Evolve</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4 font-semibold">
+                        Building America's safest LGBTQ+ community on 160 acres in Casa Grande, Arizona.
+                    </p>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-black mb-4 bouncy-text">Contact</h4>
+                    <ul class="space-y-2 text-gray-300 font-semibold">
+                        <li>📧 humanityevolve23@gmail.com</li>
+                        <li>📱 (480) 398-6718</li>
+                        <li>🌐 millionheartsmarch.com</li>
+                        <li>📍 Casa Grande, Arizona</li>
+                    </ul>
+                </div>
+
+                <!-- Goal -->
+                <div class="text-center md:text-right">
+                    <p class="font-black text-yellow-400 text-2xl wiggle">🎯 $5,000,000 Goal</p>
+                    <p class="font-semibold text-lg text-gray-300">by December 31, 2025</p>
+                    <div class="countdown-timer mt-4">
+                        <div class="text-sm font-bold mb-2">⏰ Fundraiser Ends In:</div>
+                        <div id="footer-countdown">
+                            <span id="footer-days">000</span>d 
+                            <span id="footer-hours">00</span>h 
+                            <span id="footer-minutes">00</span>m 
+                            <span id="footer-seconds">00</span>s
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-8 p-6 rainbow-card rounded-2xl">
+                <h3 class="text-2xl font-black mb-2 bouncy-text">🎉 Join Us Every Tuesday! 🎉</h3>
+                <p class="text-lg font-bold">Virtual Community Circles • 7PM EST • Starting October 14th</p>
+            </div>
+
+            <div class="text-center mt-6 text-gray-400">
+                <p>© 2024 Humanity Evolve. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+            
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.remove('hidden');
+                menuIcon.textContent = '✕';
+            } else {
+                mobileMenu.classList.add('hidden');
+                menuIcon.textContent = '☰';
+            }
+        }
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+                document.getElementById('menu-icon').textContent = '☰';
+            });
+        });
+
+        // Event filtering
+        function filterEvents(category) {
+            const events = document.querySelectorAll('[data-category]');
+            const buttons = document.querySelectorAll('.filter-btn');
+            
+            // Update active button
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Filter events
+            events.forEach(eventCard => {
+                if (category === 'all' || eventCard.dataset.category.includes(category)) {
+                    eventCard.style.display = 'block';
+                    eventCard.style.animation = 'fadeInUp 0.6s ease forwards';
+                } else {
+                    eventCard.style.display = 'none';
+                }
+            });
+        }
+
+        // Countdown timer for Million Hearts March Fundraiser
+        function updateFundraiserCountdown() {
+            const eventDate = new Date('December 31, 2025 23:59:59').getTime();
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+
+            if (distance > 0) {
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Main countdown
+                document.getElementById('days-fundraiser').textContent = days.toString().padStart(3, '0');
+                document.getElementById('hours-fundraiser').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('minutes-fundraiser').textContent = minutes.toString().padStart(2, '0');
+                document.getElementById('seconds-fundraiser').textContent = seconds.toString().padStart(2, '0');
+
+                // Footer countdown
+                document.getElementById('footer-days').textContent = days.toString().padStart(3, '0');
+                document.getElementById('footer-hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('footer-minutes').textContent = minutes.toString().padStart(2, '0');
+                document.getElementById('footer-seconds').textContent = seconds.toString().padStart(2, '0');
+            } else {
+                document.getElementById('countdown-fundraiser').innerHTML = '<div class="text-2xl font-bold">🎉 FUNDRAISER COMPLETE! 🎉</div>';
+                document.getElementById('footer-countdown').innerHTML = '<div class="text-sm font-bold">🎉 FUNDRAISER COMPLETE! 🎉</div>';
+            }
+        }
+
+        // Update countdown every second
+        setInterval(updateFundraiserCountdown, 1000);
+        updateFundraiserCountdown(); // Initial call
+
+        // RSVP Modal Functions
+        function openRSVP(eventId) {
+            const modal = document.getElementById('rsvp-modal');
+            const content = document.getElementById('rsvp-content');
+            
+            const eventDetails = getEventDetails(eventId);
+            
+            content.innerHTML = `
+                <div class="text-center">
+                    <h2 class="text-3xl font-black mb-6 fun-title">${eventDetails.title}</h2>
+                    <p class="text-lg font-semibold mb-8 text-gray-700">${eventDetails.description}</p>
+                    
+                    <form class="rsvp-form text-left" onsubmit="submitRSVP(event, '${eventId}')">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="form-group">
+                                <label>First Name *</label>
+                                <input type="text" required placeholder="Your first name">
+                            </div>
+                            <div class="form-group">
+                                <label>Last Name *</label>
+                                <input type="text" required placeholder="Your last name">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Email Address *</label>
+                            <input type="email" required placeholder="your@email.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="tel" placeholder="(555) 123-4567">
+                        </div>
+                        
+                        ${eventDetails.hasTickets ? `
+                        <div class="form-group">
+                            <label>Number of Tickets *</label>
+                            <select required>
+                                <option value="">Select tickets...</option>
+                                <option value="1">1 ticket</option>
+                                <option value="2">2 tickets</option>
+                                <option value="3">3 tickets</option>
+                                <option value="4">4 tickets</option>
+                                <option value="5+">5+ tickets (contact us)</option>
+                            </select>
+                        </div>
+                        ` : ''}
+                        
+                        ${eventDetails.hasDietary ? `
+                        <div class="form-group">
+                            <label>Dietary Restrictions</label>
+                            <textarea rows="2" placeholder="Please let us know about any dietary restrictions or allergies..."></textarea>
+                        </div>
+                        ` : ''}
+                        
+                        <div class="form-group">
+                            <label>How did you hear about us?</label>
+                            <select>
+                                <option value="">Select option...</option>
+                                <option value="social-media">Social Media</option>
+                                <option value="friend">Friend/Family</option>
+                                                            <option value="website">Website</option>
+                                <option value="email">Email Newsletter</option>
+                                <option value="event">Another Event</option>
+                                <option value="search">Google Search</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Special Requests or Comments</label>
+                            <textarea rows="3" placeholder="Any questions, special needs, or comments for the organizers..."></textarea>
+                        </div>
+                        
+                        <div class="text-center">
+                            <button type="submit" class="btn-fun text-xl py-4 px-8 wiggle">
+                                ${eventDetails.buttonText}
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            `;
+            
+            modal.style.display = 'block';
+        }
+
+        function closeRSVP() {
+            document.getElementById('rsvp-modal').style.display = 'none';
+        }
+
+        function getEventDetails(eventId) {
+            const events = {
+                'tuesday-circles': {
+                    title: '💻 Tuesday Community Circles',
+                    description: 'Join us every Tuesday evening for virtual community building, activities, and updates!',
+                    hasTickets: false,
+                    hasDietary: false,
+                    buttonText: '🎫 Join Our Community - FREE'
+                },
+                'january-celebration': {
+                    title: '🎊 Million Hearts Celebration',
+                    description: 'Virtual celebration to thank donors and share our fundraising results!',
+                    hasTickets: false,
+                    hasDietary: false,
+                    buttonText: '🎉 Get Event Updates'
+                },
+                'spring-fundraiser': {
+                    title: '🌸 Spring Fundraiser Gala',
+                    description: 'Elegant dinner event with virtual options to support our final push!',
+                    hasTickets: true,
+                    hasDietary: true,
+                    buttonText: '🎫 Reserve Your Spot'
+                },
+                'groundbreaking': {
+                    title: '🏗️ FREE Groundbreaking Weekend',
+                    description: 'Historic weekend to tour our site and participate in the groundbreaking ceremony!',
+                    hasTickets: false,
+                    hasDietary: false,
+                    buttonText: '🎫 Reserve FREE Spot'
+                },
+                'pulse-memorial': {
+                    title: '🕯️ Pulse Memorial Week',
+                    description: 'Week of remembrance honoring the 10-year anniversary of Pulse and all LGBTQ+ hate crime victims.',
+                    hasTickets: true,
+                    hasDietary: false,
+                    buttonText: '🕯️ Join Memorial Events'
+                },
+                'america-250': {
+                    title: '🇺🇸 America 250 Birthday Celebration',
+                    description: '4-day festival celebrating America\'s 250th birthday at our sanctuary!',
+                    hasTickets: true,
+                    hasDietary: true,
+                    buttonText: '🎫 Get Early Bird Tickets'
+                }
+            };
+            
+            return events[eventId] || {
+                title: '🎉 Community Event',
+                description: 'Join us for this amazing community event!',
+                hasTickets: false,
+                hasDietary: false,
+                buttonText: '🎫 Sign Me Up'
+            };
+        }
+
+        function submitRSVP(event, eventId) {
+            event.preventDefault();
+            
+            // Here you would normally send the form data to your server
+            // For now, we'll just show a success message
+            
+            const modal = document.getElementById('rsvp-modal');
+            const content = document.getElementById('rsvp-content');
+            
+            content.innerHTML = `
+                <div class="text-center">
+                    <div class="text-6xl mb-6 wiggle">🎉</div>
+                    <h2 class="text-3xl font-black mb-6 fun-title text-green-600">
+                        You're All Set!
+                    </h2>
+                    <p class="text-xl font-bold mb-6 text-gray-700">
+                        Thank you for joining our community! We'll send you all the event details soon.
+                    </p>
+                    <div class="bg-green-100 border-2 border-green-500 rounded-lg p-6 mb-6">
+                        <p class="font-bold text-green-800">✅ RSVP Confirmed</p>
+                        <p class="font-bold text-green-800">✅ Welcome email coming soon</p>
+                        <p class="font-bold text-green-800">✅ Event reminders activated</p>
+                    </div>
+                    <button onclick="closeRSVP()" class="btn-fun text-xl py-4 px-8 wiggle">
+                        🌈 Awesome!
+                    </button>
+                </div>
+            `;
+        }
+
+        // Wedding Booking Modal Functions
+        function openWeddingBooking() {
+            document.getElementById('wedding-modal').style.display = 'block';
+        }
+
+        function closeWeddingBooking() {
+            document.getElementById('wedding-modal').style.display = 'none';
+        }
+
+        function submitWeddingBooking(event) {
+            event.preventDefault();
+            
+            const modal = document.getElementById('wedding-modal');
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <span class="close" onclick="closeWeddingBooking()">×</span>
+                    <div class="text-center">
+                        <div class="text-6xl mb-6 wiggle">💒</div>
+                        <h2 class="text-3xl font-black mb-6 fun-title text-pink-600">
+                            Booking Request Received!
+                        </h2>
+                        <p class="text-xl font-bold mb-6 text-gray-700">
+                            We're so excited to potentially host your special day! Our events team will contact you within 48 hours.
+                        </p>
+                        <div class="bg-pink-100 border-2 border-pink-500 rounded-lg p-6 mb-6">
+                            <p class="font-bold text-pink-800">💒 Booking request submitted</p>
+                            <p class="font-bold text-pink-800">📞 We'll call you within 48 hours</p>
+                            <p class="font-bold text-pink-800">📧 Confirmation email sent</p>
+                            <p class="font-bold text-pink-800">🌈 Welcome to our family!</p>
+                        </div>
+                        <button onclick="closeWeddingBooking()" class="btn-fun text-xl py-4 px-8 wiggle">
+                            💕 Thank You!
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Event Proposal Modal Functions
+        function openEventProposal() {
+            document.getElementById('event-proposal-modal').style.display = 'block';
+        }
+
+        function closeEventProposal() {
+            document.getElementById('event-proposal-modal').style.display = 'none';
+        }
+
+        function submitEventProposal(event) {
+            event.preventDefault();
+            
+            const modal = document.getElementById('event-proposal-modal');
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <span class="close" onclick="closeEventProposal()">×</span>
+                    <div class="text-center">
+                        <div class="text-6xl mb-6 wiggle">🚀</div>
+                        <h2 class="text-3xl font-black mb-6 fun-title text-purple-600">
+                            Proposal Submitted!
+                        </h2>
+                        <p class="text-xl font-bold mb-6 text-gray-700">
+                            Thank you for your amazing event idea! Our community team will review your proposal and get back to you soon.
+                        </p>
+                        <div class="bg-purple-100 border-2 border-purple-500 rounded-lg p-6 mb-6">
+                            <p class="font-bold text-purple-800">🎪 Proposal under review</p>
+                            <p class="font-bold text-purple-800">📋 Community team will respond within 5 days</p>
+                            <p class="font-bold text-purple-800">🤝 We'll help you plan and promote</p>
+                            <p class="font-bold text-purple-800">🌟 Thank you for building community!</p>
+                        </div>
+                        <button onclick="closeEventProposal()" class="btn-fun text-xl py-4 px-8 wiggle">
+                            🎉 Awesome!
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Partnership Modal Functions
+        function openPartnership() {
+            document.getElementById('partnership-modal').style.display = 'block';
+        }
+
+        function closePartnership() {
+            document.getElementById('partnership-modal').style.display = 'none';
+        }
+
+        function submitPartnership(event) {
+            event.preventDefault();
+            
+            const modal = document.getElementById('partnership-modal');
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <span class="close" onclick="closePartnership()">×</span>
+                    <div class="text-center">
+                        <div class="text-6xl mb-6 wiggle">🤝</div>
+                        <h2 class="text-3xl font-black mb-6 fun-title text-blue-600">
+                            Partnership Request Received!
+                        </h2>
+                        <p class="text-xl font-bold mb-6 text-gray-700">
+                            We're excited about the possibility of partnering with you! Our partnerships team will review your request.
+                        </p>
+                        <div class="bg-blue-100 border-2 border-blue-500 rounded-lg p-6 mb-6">
+                            <p class="font-bold text-blue-800">🤝 Partnership request submitted</p>
+                            <p class="font-bold text-blue-800">📞 We'll contact you within 3 business days</p>
+                            <p class="font-bold text-blue-800">📋 Reviewing collaboration opportunities</p>
+                            <p class="font-bold text-blue-800">🌈 Stronger together!</p>
+                        </div>
+                        <button onclick="closePartnership()" class="btn-fun text-xl py-4 px-8 wiggle">
+                            🎊 Thank You!
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Close modals when clicking outside
+        window.onclick = function(event) {
+            const modals = ['rsvp-modal', 'wedding-modal', 'event-proposal-modal', 'partnership-modal'];
+            modals.forEach(modalId => {
+                const modal = document.getElementById(modalId);
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        }
+
+        // Add some fun animations on scroll
+        function addScrollAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = 'fadeInUp 0.8s ease forwards';
+                    }
+                });
+            });
+
+            document.querySelectorAll('.event-card').forEach(card => {
+                observer.observe(card);
+            });
+        }
+
+        // Initialize animations when page loads
+        document.addEventListener('DOMContentLoaded', addScrollAnimations);
+
+        // Add CSS for fade in animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
+
+
+
+

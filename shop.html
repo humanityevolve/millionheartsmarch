@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Million Hearts March | Humanity Evolve</title>
+    <meta name="description" content="Shop LGBTQ+ pride merchandise, apparel, and accessories. Support America's safest LGBTQ+ sanctuary with every purchase.">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏳️‍🌈</text></svg>">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Open+Sans:wght@400;600;700;800&display=swap');
+        
+        .fun-font { font-family: 'Fredoka One', cursive; }
+        .main-font { font-family: 'Open Sans', sans-serif; }
+        
+        body { 
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .rainbow-card {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57, #ff9ff3, #54a0ff);
+            background-size: 400% 400%;
+            animation: rainbow 8s ease infinite;
+        }
+        
+        @keyframes rainbow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .wiggle {
+            animation: wiggle 2s ease-in-out infinite;
+        }
+        
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(1deg); }
+            75% { transform: rotate(-1deg); }
+        }
+        
+        .bouncy-text {
+            animation: bounce 2s ease-in-out infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .big-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            text-shadow: 3px 3px 0px rgba(0,0,0,0.1);
+        }
+        
+        .fun-title {
+            font-family: 'Fredoka One', cursive;
+            text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+        }
+        
+        .btn-fun {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            border: none;
+            color: white;
+            font-weight: bold;
+            border-radius: 50px;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+        
+        .btn-fun:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            color: white;
+            text-decoration: none;
+        }
+        
+        .category-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border: 3px solid transparent;
+            background-clip: padding-box;
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .category-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .shop-btn {
+            background: linear-gradient(45deg, #8B5CF6, #7C3AED);
+            color: white;
+            border: none;
+            border-radius: 15px;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+        
+        .shop-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3);
+            color: white;
+            text-decoration: none;
+        }
+        
+        .main-shop-btn {
+            background: linear-gradient(45deg, #F59E0B, #D97706);
+            font-size: 1.5rem;
+            padding: 1.5rem 3rem;
+        }
+        
+        .main-shop-btn:hover {
+            box-shadow: 0 15px 35px rgba(245, 158, 11, 0.4);
+        }
+        
+        .feature-list {
+            background: #f3f4f6;
+            border-radius: 10px;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-left: 4px solid #8B5CF6;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin: 0.5rem 0;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #374151;
+        }
+        
+        .feature-item::before {
+            content: "✨";
+            margin-right: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .big-title { font-size: 2.5rem; }
+            .category-card { padding: 1.5rem; }
+            .category-icon { font-size: 3rem; }
+        }
+    </style>
+</head>
+<body class="main-font">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="text-3xl mr-3 wiggle">🏳️‍🌈</div>
+                    <div>
+                        <div class="text-xl font-black fun-title text-gray-800">Million Hearts March</div>
+                        <div class="text-sm font-bold text-gray-600">Humanity Evolve</div>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="font-bold text-gray-700 hover:text-purple-600 transition-colors">🏠 Home</a>
+                    <a href="fundraiser.html" class="font-bold text-gray-700 hover:text-purple-600 transition-colors">💝 Donate</a>
+                    <a href="events.html" class="font-bold text-gray-700 hover:text-purple-600 transition-colors">🎪 Events</a>
+                    <a href="bricks.html" class="font-bold text-gray-700 hover:text-purple-600 transition-colors">🧱 Memorial Bricks</a>
+                    <a href="shop.html" class="font-bold text-purple-600 border-b-2 border-purple-600">🛍️ Shop</a>
+                    <a href="contact.html" class="font-bold text-gray-700 hover:text-purple-600 transition-colors">📞 Contact</a>
+                    <a href="partner.html" class="font-bold text-gray-700 hover:text-purple-600 transition-colors">🤝 Partner</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button onclick="toggleMobileMenu()" class="text-2xl" id="menu-icon">☰</button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+                <div class="py-4 space-y-4">
+                    <a href="index.html" class="block font-bold text-gray-700 hover:text-purple-600 transition-colors">🏠 Home</a>
+                    <a href="fundraiser.html" class="block font-bold text-gray-700 hover:text-purple-600 transition-colors">💝 Donate</a>
+                    <a href="events.html" class="block font-bold text-gray-700 hover:text-purple-600 transition-colors">🎪 Events</a>
+                    <a href="bricks.html" class="block font-bold text-gray-700 hover:text-purple-600 transition-colors">🧱 Memorial Bricks</a>
+                    <a href="shop.html" class="block font-bold text-purple-600 border-l-4 border-purple-600 pl-4">🛍️ Shop</a>
+                    <a href="contact.html" class="block font-bold text-gray-700 hover:text-purple-600 transition-colors">📞 Contact</a>
+                    <a href="partner.html" class="block font-bold text-gray-700 hover:text-purple-600 transition-colors">🤝 Partner</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="rainbow-card py-16">
+        <div class="container mx-auto px-4 text-center text-white">
+            <h1 class="big-title mb-8 bouncy-text">
+                🛍️ Pride Shop
+            </h1>
+            <p class="text-2xl font-bold mb-8 wiggle">
+                Wear Your Pride, Support Our Mission
+            </p>
+            <div class="text-lg font-semibold mb-8">
+                Every purchase helps build America's safest LGBTQ+ sanctuary
+            </div>
+            <a href="https://humanityevolvefl.com" target="_blank" class="main-shop-btn wiggle">
+                🛒 Shop Now - Main Store
+            </a>
+        </div>
+    </section>
+
+    <!-- Shop Categories -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-black fun-title text-gray-900 mb-4 bouncy-text">
+                    🌈 Shop by Category
+                </h2>
+                <p class="text-xl font-bold text-gray-700">
+                    Find the perfect pride merchandise for you
+                </p>
+            </div>
+
+            <div class="max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- T-Shirts & Apparel -->
+                    <a href="https://humanityevolvefl.com/collections/apparel" target="_blank" class="category-card text-center border-4 border-red-400 hover:border-red-500">
+                        <div class="category-icon wiggle">👕</div>
+                        <h3 class="text-xl font-black fun-title mb-3">T-Shirts & Apparel</h3>
+                        <p class="text-gray-700 font-semibold mb-4">
+                            Comfortable, stylish clothing to show your pride every day
+                        </p>
+                        <div class="feature-list">
+                            <div class="feature-item">Premium quality fabrics</div>
+                            <div class="feature-item">Inclusive sizing options</div>
+                            <div class="feature-item">Rainbow & pride designs</div>
+                            <div class="feature-item">Unisex styles available</div>
+                        </div>
+                        <div class="shop-btn">
+                            👕 Shop Apparel
+                        </div>
+                    </a>
+
+                    <!-- Accessories -->
+                    <a href="https://humanityevolvefl.com/collections/accessories" target="_blank" class="category-card text-center border-4 border-blue-400 hover:border-blue-500">
+                        <div class="category-icon wiggle">👜</div>
+                        <h3 class="text-xl font-black fun-title mb-3">Accessories</h3>
+                        <p class="text-gray-700 font-semibold mb-4">
+                            Beautiful accessories to complete your pride look
+                        </p>
+                        <div class="feature-list">
+                            <div class="feature-item">Pride flags & pins</div>
+                            <div class="feature-item">Jewelry & bracelets</div>
+                            <div class="feature-item">Bags & totes</div>
+                            <div class="feature-item">Stickers & patches</div>
+                        </div>
+                        <div class="shop-btn">
+                            👜 Shop Accessories
+                        </div>
+                    </a>
+
+                    <!-- Home & Decor -->
+                    <a href="https://humanityevolvefl.com/collections/home-decor" target="_blank" class="category-card text-center border-4 border-green-400 hover:border-green-500">
+                        <div class="category-icon wiggle">🏠</div>
+                        <h3 class="text-xl font-black fun-title mb-3">Home & Decor</h3>
+                        <p class="text-gray-700 font-semibold mb-4">
+                            Make your space a proud and welcoming sanctuary
+                        </p>
+                        <div class="feature-list">
+                            <div class="feature-item">Rainbow home decor</div>
+                            <div class="feature-item">Pride mugs & drinkware</div>
+                            <div class="feature-item">Wall art & posters</div>
+                            <div class="feature-item">Candles & aromatherapy</div>
+                        </div>
+                        <div class="shop-btn">
+                            🏠 Shop Home Decor
+                        </div>
+                    </a>
+
+                    <!-- Pride Flags -->
+                    <a href="https://humanityevolvefl.com/collections/pride-flags" target="_blank" class="category-card text-center border-4 border-yellow-400 hover:border-yellow-500">
+                        <div class="category-icon wiggle">🏳️‍🌈</div>
+                        <h3 class="text-xl font-black fun-title mb-3">Pride Flags</h3>
+                        <p class="text-gray-700 font-semibold mb-4">
+                            High-quality flags representing every part of our community
+                        </p>
+                        <div class="feature-list">
+                            <div class="feature-item">All pride flag variations</div>
+                            <div class="feature-item">Multiple sizes available</div>
+                            <div class="feature-item">Weather-resistant materials</div>
+                            <div class="feature-item">Indoor & outdoor options</div>
+                        </div>
+                        <div class="shop-btn">
+                            🏳️‍🌈 Shop Flags
+                        </div>
+                    </a>
+
+                    <!-- Books & Media -->
+                    <a href="https://humanityevolvefl.com/collections/books-media" target="_blank" class="category-card text-center border-4 border-purple-400 hover:border-purple-500">
+                        <div class="category-icon wiggle">📚</div>
+                        <h3 class="text-xl font-black fun-title mb-3">Books & Media</h3>
+                        <p class="text-gray-700 font-semibold mb-4">
+                            Educational and inspiring content for all ages
+                        </p>
+                        <div class="feature-list">
+                            <div class="feature-item">LGBTQ+ literature</div>
+                            <div class="feature-item">Educational resources</div>
+                            <div class="feature-item">Children's books</div>
+                            <div class="feature-item">Inspirational content</div>
+                        </div>
+                        <div class="shop-btn">
+                            📚 Shop Books
+                        </div>
+                    </a>
+
+                    <!-- Gift Cards -->
+                    <a href="https://humanityevolvefl.com/collections/gift-cards" target="_blank" class="category-card text-center border-4 border-pink-400 hover:border-pink-500">
+                        <div class="category-icon wiggle">🎁</div>
+                        <h3 class="text-xl font-black fun-title mb-3">Gift Cards</h3>
+                        <p class="text-gray-700 font-semibold mb-4">
+                            Perfect gifts that let your loved ones choose their favorites
+                        </p>
+                        <div class="feature-list">
+                            <div class="feature-item">Digital gift cards</div>
+                            <div class="feature-item">Multiple denominations</div>
+                            <div class="feature-item">Never expire</div>
+                            <div class="feature-item">Perfect for any occasion</div>
+                        </div>
+                        <div class="shop-btn">
+                            🎁 Shop Gift Cards
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Shop With Us -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-black fun-title text-gray-900 mb-4 bouncy-text">
+                    💖 Why Shop With Us?
+                </h2>
+                <p class="text-xl font-bold text-gray-700">
+                    Every purchase makes a difference
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-20 p-8 shadow-lg text-center">
+                        <div class="text-4xl mb-4 wiggle">🏗️</div>
+                        <h3 class="text-xl font-black fun-title mb-3">Supports Our Mission</h3>
+                        <p class="text-gray-700 font-semibold">
+                            100% of profits go toward building America's safest LGBTQ+ sanctuary on 160 acres in Arizona.
+                        </p>
+                    </div>
+
+                    <div class="bg-white rounded-20 p-8 shadow-lg text-center">
+                        <div class="text-4xl mb-4 wiggle">🌟</div>
+                        <h3 class="text-xl font-black fun-title mb-3">Premium Quality</h3>
+                        <p class="text-gray-700 font-semibold">
+                            We only sell high-quality products that we're proud to put our name on. Your satisfaction is guaranteed.
+                        </p>
+                    </div>
+
+                    <div class="bg-white rounded-20 p-8 shadow-lg text-center">
+                        <div class="text-4xl mb-4 wiggle">🚚</div>
+                        <h3 class="text-xl font-black fun-title mb-3">Fast Shipping</h3>
+                        <p class="text-gray-700 font-semibold">
+                            Quick processing and shipping so you can start showing your pride as soon as possible.
+                        </p>
+                    </div>
+
+                    <div class="bg-white rounded-20 p-8 shadow-lg text-center">
+                        <div class="text-4xl mb-4 wiggle">💝</div>
+                        <h3 class="text-xl font-black fun-title mb-3">Community Impact</h3>
+                        <p class="text-gray-700 font-semibold">
+                            Join thousands of supporters helping create a safe haven for LGBTQ+ individuals and families.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="rainbow-card py-16">
+        <div class="container mx-auto px-4 text-center text-white">
+            <h2 class="big-title mb-8 bouncy-text">
+                🛒 Start Shopping Today
+            </h2>
+            <p class="text-2xl font-bold mb-8 wiggle">
+                Wear your pride and support our sanctuary mission
+            </p>
+            <div class="space-x-4">
+                <a href="https://humanityevolvefl.com" target="_blank" class="btn-fun text-xl py-4 px-8 wiggle">
+                    🛍️ Visit Main Store
+                </a>
+                <a href="fundraiser.html" class="btn-fun text-xl py-4 px-8 wiggle">
+                    💝 Make a Donation
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Organization Info -->
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="text-2xl mr-2 wiggle">🏳️‍🌈</div>
+                        <div>
+                            <div class="text-lg font-black fun-title">Million Hearts March</div>
+                            <div class="text-sm font-bold text-gray-300">Humanity Evolve</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 font-semibold">
+                        Building America's safest LGBTQ+ sanctuary on 160 acres in Arizona.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-black fun-title mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-white font-semibold transition-colors">🏠 Home</a></li>
+                        <li><a href="fundraiser.html" class="text-gray-300 hover:text-white font-semibold transition-colors">💝 Donate</a></li>
+                        <li><a href="events.html" class="text-gray-300 hover:text-white font-semibold transition-colors">🎪 Events</a></li>
+                        <li><a href="bricks.html" class="text-gray-300 hover:text-white font-semibold transition-colors">🧱 Memorial Bricks</a></li>
+                        <li><a href="shop.html" class="text-gray-300 hover:text-white font-semibold transition-colors">🛍️ Shop</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-black fun-title mb-4">Contact Us</h3>
+                    <ul class="space-y-2">
+                        <li class="text-gray-300 font-semibold">📧 humanityevolve23@gmail.com</li>
+                        <li class="text-gray-300 font-semibold">📱 (480) 398-6718</li>
+                        <li class="text-gray-300 font-semibold">📍 Arizona, USA</li>
+                    </ul>
+                </div>
+
+                <!-- Shop Categories -->
+                <div>
+                    <h3 class="text-lg font-black fun-title mb-4">Shop Categories</h3>
+                    <ul class="space-y-2">
+                        <li class="text-gray-300 font-semibold">👕 Apparel</li>
+                        <li class="text-gray-300 font-semibold">👜 Accessories</li>
+                        <li class="text-gray-300 font-semibold">🏠 Home Decor</li>
+                        <li class="text-gray-300 font-semibold">🏳️‍🌈 Pride Flags</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-300 font-semibold">
+                    © 2024 Million Hearts March - Humanity Evolve. Shop with pride, support our mission. 🌈
+                </p>
+                <p class="text-gray-400 font-semibold mt-2">
+                    All purchases support America's safest LGBTQ+ sanctuary.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.textContent = '✕';
+            } else {
+                menu.classList.add('hidden');
+                icon.textContent = '☰';
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+

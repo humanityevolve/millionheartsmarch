@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Our Mission - Million Hearts March | Humanity Evolve</title>
+    <meta name="description" content="Support America's safest LGBTQ+ sanctuary on 160 acres in Arizona. Every donation builds hope, safety, and community for those who need it most.">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏳️‍🌈</text></svg>">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Open+Sans:wght@400;600;700;800&display=swap');
+        
+        .fun-font { font-family: 'Fredoka One', cursive; }
+        .main-font { font-family: 'Open Sans', sans-serif; }
+        
+        body { 
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .rainbow-card {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57, #ff9ff3, #54a0ff);
+            background-size: 400% 400%;
+            animation: rainbow 8s ease infinite;
+        }
+        
+        @keyframes rainbow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .wiggle {
+            animation: wiggle 2s ease-in-out infinite;
+        }
+        
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(1deg); }
+            75% { transform: rotate(-1deg); }
+        }
+        
+        .bouncy-text {
+            animation: bounce 2s ease-in-out infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .big-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            text-shadow: 3px 3px 0px rgba(0,0,0,0.1);
+        }
+        
+        .fun-title {
+            font-family: 'Fredoka One', cursive;
+            text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+        }
+        
+        .btn-fun {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            border: none;
+            color: white;
+            font-weight: bold;
+            border-radius: 50px;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+        
+        .btn-fun:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            color: white;
+            text-decoration: none;
+        }
+        
+        .donation-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border: 3px solid transparent;
+            background-clip: padding-box;
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+        }
+        
+        .donation-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+        
+        .donation-btn {
+            background: linear-gradient(45deg, #dc2626, #b91c1c);
+            color: white;
+            border: none;
+            border-radius: 15px;
+            padding: 1rem 1.5rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-bottom: 1rem;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+        }
+        
+        .donation-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(220, 38, 38, 0.3);
+            color: white;
+            text-decoration: none;
+        }
+        
+        .monthly-btn {
+            background: linear-gradient(45deg, #059669, #047857);
+        }
+        
+        .monthly-btn:hover {
+            box-shadow: 0 8px 20px rgba(5, 150, 105, 0.3);
+        }
+        
+        .progress-bar {
+            background: #e5e7eb;
+            border-radius: 50px;
+            height: 30px;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+        
+        .progress-fill {
+            background: linear-gradient(45deg, #10b981, #059669);
+            height: 100%;
+            border-radius: 50px;
+            transition: width 2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .reward-list {
+            background: #f3f4f6;
+            border-radius: 10px;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-left: 4px solid #10b981;
+        }
+        
+        .reward-item {
+            display: flex;
+            align-items: center;
+            margin: 0.5rem 0;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #374151;
+        }
+        
+        .reward-item::before {
+            content: "✅";
+            margin-right: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .big-title { font-size: 2.5rem; }
+            .donation-card { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body class="main-font">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="text-3xl mr-3 wiggle">🏳️‍🌈</div>
+                    <div>
+                        <div class="text-xl font-black fun-title text-gray-800">Million Hearts March</div>
+                        <div class="text-sm font-bold text-gray-600">Humanity Evolve</div>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="font-bold text-gray-700 hover:text-purple-600 transition-colors">🏠 Home</a>
+                    <a href="fundraiser.html" class="font-bold text-purple-600 border-b-2 border-purple-600">💝 Donate</a>
+                    <a href="events.html" class="font-bold text-gray-700 hover:text-purple-600 transition-colors">🎪 Events</a>
+                    <a href="bricks.html" class="font-bold text-gray-700 hover:text-purple-600 transition-colors">🧱 Memorial Bricks</a>
+                    <a href="shop.html" class="font-bold text-gray-700 hover:text-purple-600 transition-colors">🛍️ Shop</a>
+                    <a href="contact.html" class="font-bold text-gray-700 hover:text-purple-600 transition-colors">📞 Contact</a>
+                    <a href="partner.html" class="font-bold text-gray-700 hover:text-purple-600 transition-colors">🤝 Partner</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button onclick="toggleMobileMenu()" class="text-2xl" id="menu-icon">☰</button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+                <div class="py-4 space-y-4">
+                    <a href="index.html" class="block font-bold text-gray-700 hover:text-purple-600 transition-colors">🏠 Home</a>
+                    <a href="fundraiser.html" class="block font-bold text-purple-600 border-l-4 border-purple-600 pl-4">💝 Donate</a>
+                    <a href="events.html" class="block font-bold text-gray-700 hover:text-purple-600 transition-colors">🎪 Events</a>
+                    <a href="bricks.html" class="block font-bold text-gray-700 hover:text-purple-600 transition-colors">🧱 Memorial Bricks</a>
+                    <a href="shop.html" class="block font-bold text-gray-700 hover:text-purple-600 transition-colors">🛍️ Shop</a>
+                    <a href="contact.html" class="block font-bold text-gray-700 hover:text-purple-600 transition-colors">📞 Contact</a>
+                    <a href="partner.html" class="block font-bold text-gray-700 hover:text-purple-600 transition-colors">🤝 Partner</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="rainbow-card py-16">
+        <div class="container mx-auto px-4 text-center text-white">
+            <h1 class="big-title mb-8 bouncy-text">
+                💝 Support Our Mission
+            </h1>
+            <p class="text-2xl font-bold mb-8 wiggle">
+                Building America's Safest LGBTQ+ Sanctuary
+            </p>
+            <div class="text-lg font-semibold">
+                160 acres of hope, safety, and community in Arizona
+            </div>
+        </div>
+    </section>
+
+    <!-- Progress Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl font-black fun-title text-gray-900 mb-8 bouncy-text">
+                    🎯 Our Progress
+                </h2>
+                
+                <div class="donation-card">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                        <div class="text-center">
+                            <div class="text-4xl font-black text-green-600 mb-2">$0</div>
+                            <div class="text-lg font-bold text-gray-700">Raised So Far</div>
+                            <div class="text-sm text-gray-500 font-semibold">Every dollar counts!</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-black text-blue-600 mb-2">$2.5M</div>
+                            <div class="text-lg font-bold text-gray-700">Goal Amount</div>
+                            <div class="text-sm text-gray-500 font-semibold">160 acres of safety</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-black text-purple-600 mb-2">0</div>
+                            <div class="text-lg font-bold text-gray-700">Supporters</div>
+                            <div class="text-sm text-gray-500 font-semibold">Be the first!</div>
+                        </div>
+                    </div>
+                    
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%;">
+                            0% Complete
+                        </div>
+                    </div>
+                    
+                    <p class="text-lg font-bold text-gray-700 mt-4">
+                        🌟 Be part of history! Help us create America's safest LGBTQ+ sanctuary.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Options -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-black fun-title text-gray-900 mb-4 bouncy-text">
+                    💖 Choose Your Impact
+                </h2>
+                <p class="text-xl font-bold text-gray-700">
+                    Every donation comes with special thank-you rewards!
+                </p>
+            </div>
+
+            <div class="max-w-5xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- $1 Donation -->
+                    <div class="donation-card text-center">
+                        <div class="text-4xl mb-4 wiggle">💛</div>
+                        <h3 class="text-xl font-black fun-title mb-3">Every Dollar Counts</h3>
+                        <div class="text-2xl font-black text-red-600 mb-3">$1</div>
+                        <p class="text-gray-700 font-semibold mb-4">
+                            Small gift, big heart! Every single dollar helps build our sanctuary.
+                        </p>
+                        <div class="reward-list">
+                            <div class="reward-item">Heartfelt thank you email</div>
+                            <div class="reward-item">Project updates</div>
+                            <div class="reward-item">Community member status</div>
+                        </div>
+                        <a href="https://buy.stripe.com/8x2bJ3gp21RGa1P3C16AM00" class="donation-btn wiggle">
+                            💛 Donate $1
+                        </a>
+                    </div>
+
+                    <!-- $5 Donation -->
+                    <div class="donation-card text-center">
+                        <div class="text-4xl mb-4 wiggle">💚</div>
+                        <h3 class="text-xl font-black fun-title mb-3">Coffee Fund</h3>
+                        <div class="text-2xl font-black text-red-600 mb-3">$5</div>
+                        <p class="text-gray-700 font-semibold mb-4">
+                            Skip one coffee and help build hope! Your $5 makes a difference.
+                        </p>
+                        <div class="reward-list">
+                            <div class="reward-item">All $1 rewards</div>
+                            <div class="reward-item">Digital sanctuary postcard</div>
+                            <div class="reward-item">Monthly progress photos</div>
+                        </div>
+                        <a href="https://buy.stripe.com/5kQ00l5Ko7c0ei5c8x6AM01" class="donation-btn wiggle">
+                            💚 Donate $5
+                        </a>
+                    </div>
+
+                    <!-- $10 Donation -->
+                    <div class="donation-card text-center">
+                        <div class="text-4xl mb-4 wiggle">💙</div>
+                        <h3 class="text-xl font-black fun-title mb-3">Lunch Money</h3>
+                        <div class="text-2xl font-black text-red-600 mb-3">$10</div>
+                        <p class="text-gray-700 font-semibold mb-4">
+                            The price of lunch can help build a lifetime of safety for someone.
+                        </p>
+                        <div class="reward-list">
+                            <div class="reward-item">All previous rewards</div>
+                            <div class="reward-item">Digital certificate of support</div>
+                            <div class="reward-item">Exclusive supporter badge</div>
+                        </div>
+                        <a href="https://buy.stripe.com/aFa14pb4I0NC3Dr5K96AM02" class="donation-btn wiggle">
+                            💙 Donate $10
+                        </a>
+                    </div>
+
+                    <!-- $25 Donation -->
+                    <div class="donation-card text-center border-4 border-yellow-400">
+                        <div class="text-4xl mb-4 wiggle">💜</div>
+                        <h3 class="text-xl font-black fun-title mb-3">Popular Choice</h3>
+                        <div class="text-2xl font-black text-red-600 mb-3">$25</div>
+                        <div class="bg-yellow-400 text-black font-black text-xs px-2 py-1 rounded-full mb-3">POPULAR!</div>
+                        <p class="text-gray-700 font-semibold mb-4">
+                            A meaningful gift that helps us build something truly special.
+                        </p>
+                        <div class="reward-list">
+                            <div class="reward-item">All previous rewards</div>
+                            <div class="reward-item">Personalized thank you video</div>
+                            <div class="reward-item">Name on digital supporter wall</div>
+                            <div class="reward-item">Early access to events</div>
+                        </div>
+                        <a href="https://buy.stripe.com/fZufZj0q453S3Dr4G56AM03" class="donation-btn wiggle">
+                            💜 Donate $25
+                        </a>
+                    </div>
+
+                    <!-- $100 Donation -->
+                    <div class="donation-card text-center">
+                        <div class="text-4xl mb-4 wiggle">🧡</div>
+                        <h3 class="text-xl font-black fun-title mb-3">Champion</h3>
+                        <div class="text-2xl font-black text-red-600 mb-3">$100</div>
+                        <p class="text-gray-700 font-semibold mb-4">
+                            You're a champion of change! This gift makes a real impact.
+                        </p>
+                        <div class="reward-list">
+                            <div class="reward-item">All previous rewards</div>
+                            <div class="reward-item">Printed certificate mailed to you</div>
+                            <div class="reward-item">Quarterly video calls with founders</div>
+                            <div class="reward-item">Champion supporter status</div>
+                        </div>
+                        <a href="https://buy.stripe.com/5kQ14pfkYeEs5Lz6Od6AM04" class="donation-btn wiggle">
+                            🧡 Donate $100
+                        </a>
+                    </div>
+
+                    <!-- $1000 Donation -->
+                    <div class="donation-card text-center border-4 border-purple-500">
+                        <div class="text-4xl mb-4 wiggle">💎</div>
+                        <h3 class="text-xl font-black fun-title mb-3">Major Supporter</h3>
+                        <div class="text-2xl font-black text-red-600 mb-3">$1,000</div>
+                        <div class="bg-purple-500 text-white font-black text-xs px-2 py-1 rounded-full mb-3">MAJOR GIFT!</div>
+                        <p class="text-gray-700 font-semibold mb-4">
+                            Incredible generosity! You're helping make this dream a reality.
+                        </p>
+                        <div class="reward-list">
+                            <div class="reward-item">All previous rewards</div>
+                            <div class="reward-item">Personal sanctuary tour when built</div>
+                            <div class="reward-item">Name on permanent donor wall</div>
+                            <div class="reward-item">Annual appreciation dinner invite</div>
+                            <div class="reward-item">Major supporter recognition</div>
+                        </div>
+                        <a href="https://buy.stripe.com/28EeVfdcQ1RG5LzgoN6AM05" class="donation-btn wiggle">
+                            💎 Donate $1,000
+                        </a>
+                    </div>
+
+                    <!-- $10000 Donation -->
+                    <div class="donation-card text-center border-4 border-gold bg-gradient-to-br from-yellow-50 to-yellow-100">
+                        <div class="text-4xl mb-4 wiggle">👑</div>
+                        <h3 class="text-xl font-black fun-title mb-3">Founding Supporter</h3>
+                        <div class="text-2xl font-black text-red-600 mb-3">$10,000</div>
+                        <div class="bg-gradient-to-r from-yellow-400 to-yellow-600 text-white font-black text-xs px-2 py-1 rounded-full mb-3">FOUNDING GIFT!</div>
+                        <p class="text-gray-700 font-semibold mb-4">
+                            You're a founding supporter! Your legacy will be honored forever.
+                        </p>
+                        <div class="reward-list">
+                            <div class="reward-item">All previous rewards</div>
+                            <div class="reward-item">Building/area naming opportunity</div>
+                            <div class="reward-item">Founding supporter plaque</div>
+                            <div class="reward-item">Lifetime VIP sanctuary access</div>
+                            <div class="reward-item">Personal consultation on sanctuary design</div>
+                            <div class="reward-item">Legacy founding supporter status</div>
+                        </div>
+                        <a href="https://buy.stripe.com/9B63cx5Ko1RG6PDa0p6AM06" class="donation-btn wiggle">
+                            👑 Donate $10,000
+                        </a>
+                    </div>
+
+                    <!-- Monthly $5 -->
+                    <div class="donation-card text-center border-4 border-green-400 bg-gradient-to-br from-green-50 to-green-100">
+                        <div class="text-4xl mb-4 wiggle">🔄</div>
+                        <h3 class="text-xl font-black fun-title mb-3">Monthly Hero</h3>
+                        <div class="text-2xl font-black text-green-600 mb-3">$5/month</div>
+                        <div class="bg-green-500 text-white font-black text-xs px-2 py-1 rounded-full mb-3">RECURRING!</div>
+                        <p class="text-gray-700 font-semibold mb-4">
+                            Ongoing support! $5/month helps us plan and build consistently.
+                        </p>
+                        <div class="reward-list">
+                            <div class="reward-item">Monthly supporter updates</div>
+                            <div class="reward-item">Exclusive monthly video calls</div>
+                            <div class="reward-item">Monthly hero badge</div>
+                            <div class="reward-item">First access to new initiatives</div>
+                            <div class="reward-item">Cancel anytime</div>
+                        </div>
+                        <a href="https://buy.stripe.com/cNicN7dcQ7c01vj0pP6AM07" class="donation-btn monthly-btn wiggle">
+                            🔄 $5 Monthly
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-black fun-title text-gray-900 mb-4 bouncy-text">
+                        🌟 Your Impact
+                    </h2>
+                    <p class="text-xl font-bold text-gray-700">
+                        See how your donation helps build America's safest LGBTQ+ sanctuary
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="donation-card">
+                        <div class="text-center">
+                            <div class="text-4xl mb-4 wiggle">🏠</div>
+                            <h3 class="text-xl font-black fun-title mb-4">Safe Housing</h3>
+                            <p class="text-gray-700 font-semibold">
+                                Your donations help build emergency housing, transitional homes, and permanent residences for LGBTQ+ individuals who need a safe place to call home.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="donation-card">
+                        <div class="text-center">
+                            <div class="text-4xl mb-4 wiggle">🏥</div>
+                            <h3 class="text-xl font-black fun-title mb-4">Healthcare Access</h3>
+                            <p class="text-gray-700 font-semibold">
+                                Fund on-site medical facilities, mental health services, and specialized LGBTQ+ healthcare that's often hard to find elsewhere.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="donation-card">
+                        <div class="text-center">
+                            <div class="text-4xl mb-4 wiggle">🎓</div>
+                            <h3 class="text-xl font-black fun-title mb-4">Education & Skills</h3>
+                            <p class="text-gray-700 font-semibold">
+                                Support educational programs, job training, and skill development that help community members build independent, successful lives.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="donation-card">
+                        <div class="text-center">
+                            <div class="text-4xl mb-4 wiggle">🤝</div>
+                            <h3 class="text-xl font-black fun-title mb-4">Community Building</h3>
+                            <p class="text-gray-700 font-semibold">
+                                Create spaces for community gatherings, support groups, cultural events, and the connections that make life meaningful.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="rainbow-card py-16">
+        <div class="container mx-auto px-4 text-center text-white">
+            <h2 class="big-title mb-8 bouncy-text">
+                💖 Every Gift Matters
+            </h2>
+            <p class="text-2xl font-bold mb-8 wiggle">
+                Together, we're building more than a sanctuary - we're building hope.
+            </p>
+            <div class="space-x-4">
+                <a href="https://buy.stripe.com/fZufZj0q453S3Dr4G56AM03" class="btn-fun text-xl py-4 px-8 wiggle">
+                    💜 Donate $25 Now
+                </a>
+                <a href="bricks.html" class="btn-fun text-xl py-4 px-8 wiggle">
+                    🧱 Memorial Bricks
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Organization Info -->
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="text-2xl mr-2 wiggle">🏳️‍🌈</div>
+                        <div>
+                            <div class="text-lg font-black fun-title">Million Hearts March</div>
+                            <div class="text-sm font-bold text-gray-300">Humanity Evolve</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 font-semibold">
+                        Building America's safest LGBTQ+ sanctuary on 160 acres in Arizona.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-black fun-title mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-white font-semibold transition-colors">🏠 Home</a></li>
+                        <li><a href="fundraiser.html" class="text-gray-300 hover:text-white font-semibold transition-colors">💝 Donate</a></li>
+                        <li><a href="events.html" class="text-gray-300 hover:text-white font-semibold transition-colors">🎪 Events</a></li>
+                        <li><a href="bricks.html" class="text-gray-300 hover:text-white font-semibold transition-colors">🧱 Memorial Bricks</a></li>
+                        <li><a href="shop.html" class="text-gray-300 hover:text-white font-semibold transition-colors">🛍️ Shop</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-black fun-title mb-4">Contact Us</h3>
+                    <ul class="space-y-2">
+                        <li class="text-gray-300 font-semibold">📧 humanityevolve23@gmail.com</li>
+                        <li class="text-gray-300 font-semibold">📱 (480) 398-6718</li>
+                        <li class="text-gray-300 font-semibold">📍 Arizona, USA</li>
+                    </ul>
+                              </div>
+
+                <!-- Social & Legal -->
+                <div>
+                    <h3 class="text-lg font-black fun-title mb-4">Connect</h3>
+                    <ul class="space-y-2">
+                        <li><a href="contact.html" class="text-gray-300 hover:text-white font-semibold transition-colors">📞 Contact</a></li>
+                        <li><a href="partner.html" class="text-gray-300 hover:text-white font-semibold transition-colors">🤝 Partner</a></li>
+                        <li class="text-gray-300 font-semibold">🔒 Tax-Deductible Donations</li>
+                        <li class="text-gray-300 font-semibold">💳 Secure Payments</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-300 font-semibold">
+                    © 2024 Million Hearts March - Humanity Evolve. Building a safer tomorrow for everyone. 🌈
+                </p>
+                <p class="text-gray-400 font-semibold mt-2">
+                    All donations are secure and help fund America's safest LGBTQ+ sanctuary.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.textContent = '✕';
+            } else {
+                menu.classList.add('hidden');
+                icon.textContent = '☰';
+            }
+        }
+
+        // Animate progress bar on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(() => {
+                const progressFill = document.querySelector('.progress-fill');
+                // This will be updated when you have real donation data
+                progressFill.style.width = '0%';
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
+  
+
+
+
+
+
+
+
+
+
+
